@@ -22,9 +22,7 @@
 
     <services>
         <service id="sylius.controller.admin.dashboard" class="%sylius.controller.admin.dashboard.class%">
-            <call method="setContainer">
-                <argument type="service" id="service_container" />
-            </call>
+            <argument type="service" id="templating" />
         </service>
     </services>
 
