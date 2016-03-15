@@ -6,6 +6,5 @@ sylius:
     admin:
       main:
         configuration:
-          header: Konfiguracja
-          countries: Kraje
-          locales: Ustawienia regionalne
+          countries: Страни
+          locales: Езикови променливи
