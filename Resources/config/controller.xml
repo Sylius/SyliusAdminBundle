@@ -22,6 +22,7 @@
 
     <services>
         <service id="sylius.controller.admin.dashboard" class="%sylius.controller.admin.dashboard.class%">
+            <argument type="service" id="sylius.dashboard.statistics_provider" />
             <argument type="service" id="templating" />
         </service>
     </services>
