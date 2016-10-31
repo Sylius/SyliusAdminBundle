@@ -1,12 +1,12 @@
 sylius_grid:
     grids:
-        sylius_admin_customer_group:
+        sylius_admin_product_association_type:
             driver:
                 name: doctrine/orm
                 options:
-                    class: "%sylius.model.customer_group.class%"
+                    class: "%sylius.model.product_association_type.class%"
             sorting:
-                name: asc
+                code: asc
             fields:
                 code:
                     type: string
@@ -15,8 +15,10 @@ sylius_grid:
                 name:
                     type: string
                     label: sylius.ui.name
-                    sortable: ~
             filters:
+                code:
+                    type: string
+                    label: sylius.ui.code
                 name:
                     type: string
                     label: sylius.ui.name
