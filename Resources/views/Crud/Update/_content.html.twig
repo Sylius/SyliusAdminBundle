@@ -1,5 +1,5 @@
 <div class="ui segment">
-    {{ form_start(form, {'action': path(configuration.getRouteName('update'), configuration.vars.route.parameters|default({ 'id': resource.id })), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
+    {{ form_start(form, {'action': path(configuration.vars.route.name|default(configuration.getRouteName('update')), configuration.vars.route.parameters|default({ 'id': resource.id })), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
     <input type="hidden" name="_method" value="PUT" />
     {% if configuration.vars.templates.form is defined %}
         {% include configuration.vars.templates.form %}
