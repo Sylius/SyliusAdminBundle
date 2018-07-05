@@ -50,7 +50,9 @@ $.fn.extend({
         accept: 'application/json',
         success(response) {
           if (undefined !== response && response.version !== retrieve(LAST_SYLIUS_VERSION)) {
-            store(LAST_SYLIUS_VERSION, response.version.toString());
+            if (undefined !== response.version) {
+              store(LAST_SYLIUS_VERSION, response.version.toString());
+            }
           }
         },
         complete() {
