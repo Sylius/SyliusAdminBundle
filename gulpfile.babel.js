@@ -48,8 +48,8 @@ const options = {
 const rootPath = upath.normalizeSafe(argv.rootPath);
 const adminRootPath = upath.joinSafe(rootPath, 'admin');
 const vendorPath = upath.normalizeSafe(argv.vendorPath || '.');
-const vendorAdminPath = vendorPath === '.' ? '.' : upath.joinSafe(vendorPath, 'admin-bundle');
-const vendorUiPath = vendorPath === '.' ? '../UiBundle/' : upath.joinSafe(vendorPath, 'ui-bundle');
+const vendorAdminPath = vendorPath === '.' ? '.' : upath.joinSafe(vendorPath, 'sylius/admin-bundle');
+const vendorUiPath = vendorPath === '.' ? '../UiBundle/' : upath.joinSafe(vendorPath, 'sylius/ui-bundle');
 const nodeModulesPath = upath.normalizeSafe(argv.nodeModulesPath);
 
 const paths = {
