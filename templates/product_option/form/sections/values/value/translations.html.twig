@@ -1,6 +1,6 @@
 {% for translation_form_key, translation_form in hookable_metadata.context.value_form.translations %}
-    <div class="row" {{ sylius_test_html_attribute('option-value-locale', translation_form_key) }}>
-        <div class="col-3">
+    <div class="row mb-2" {{ sylius_test_html_attribute('option-value-locale', translation_form_key) }}>
+        <div class="col-12">
             {% if translation_form.vars.name is not null %}
                 <div class="d-flex">
                     <span class="flag flag-sm flag-country-{{ translation_form.vars.name|lower|split('_')|last }} me-2 mt-3"></span>
@@ -10,7 +10,7 @@
                 <span class="flag flag-sm flag-country-eu me-3"></span>
             {% endif %}
         </div>
-        <div class="col-9">
+        <div class="col-12">
             <div class="input-group">
                 {{ form_widget(translation_form.value) }}
                 <button
