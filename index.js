@@ -23,7 +23,7 @@ class SyliusAdmin {
       .enableVersioning(Encore.isProduction())
       .enableSassLoader((options) => {
         // eslint-disable-next-line no-param-reassign
-        options.additionalData = `$rootDir: ${rootDir};`;
+        options.additionalData = `$rootDir: '${rootDir}';`;
       })
       .enableStimulusBridge(path.resolve(__dirname, 'Resources/assets/controllers.json'));
 
