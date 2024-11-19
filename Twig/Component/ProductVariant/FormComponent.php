@@ -46,8 +46,8 @@ class FormComponent
         FormFactoryInterface $formFactory,
         string $resourceClass,
         string $formClass,
-        private readonly ProductVariantFactoryInterface $productVariantFactory,
-        private readonly ProductRepositoryInterface $productRepository,
+        protected readonly ProductVariantFactoryInterface $productVariantFactory,
+        protected readonly ProductRepositoryInterface $productRepository,
     ) {
         $this->initialize($productVariantRepository, $formFactory, $resourceClass, $formClass);
     }

@@ -19,7 +19,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 #[AsTwigComponent]
 class ProductTaxonsComponent
 {
-    public function __construct(private readonly AllTaxonsInterface $allTaxons)
+    public function __construct(protected readonly AllTaxonsInterface $allTaxons)
     {
     }
 

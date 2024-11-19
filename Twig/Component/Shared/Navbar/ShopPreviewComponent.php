@@ -20,7 +20,7 @@ use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 class ShopPreviewComponent
 {
     /** @param ChannelRepositoryInterface<ChannelInterface> $channelRepository */
-    public function __construct(private readonly ChannelRepositoryInterface $channelRepository)
+    public function __construct(protected readonly ChannelRepositoryInterface $channelRepository)
     {
     }
 

@@ -38,8 +38,8 @@ class OrderStatisticsComponent
      * @param CustomerRepositoryInterface<CustomerInterface> $customerRepository
      */
     public function __construct(
-        private readonly CustomerRepositoryInterface $customerRepository,
-        private readonly CustomerStatisticsProviderInterface $statisticsProvider,
+        protected readonly CustomerRepositoryInterface $customerRepository,
+        protected readonly CustomerStatisticsProviderInterface $statisticsProvider,
     ) {
     }
 

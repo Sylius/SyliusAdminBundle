@@ -43,8 +43,8 @@ class NewOrdersComponent
      * @param ChannelRepositoryInterface<ChannelInterface> $channelRepository
      */
     public function __construct(
-        private readonly OrderRepositoryInterface $orderRepository,
-        private readonly ChannelRepositoryInterface $channelRepository,
+        protected readonly OrderRepositoryInterface $orderRepository,
+        protected readonly ChannelRepositoryInterface $channelRepository,
     ) {
     }
 

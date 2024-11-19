@@ -33,9 +33,9 @@ class TreeComponent
 
     /** @param TaxonRepositoryInterface<TaxonInterface> $taxonRepository */
     public function __construct(
-        private readonly AllTaxonsInterface $allTaxons,
-        private readonly TaxonRepositoryInterface $taxonRepository,
-        private readonly ObjectManager $taxonManager,
+        protected readonly AllTaxonsInterface $allTaxons,
+        protected readonly TaxonRepositoryInterface $taxonRepository,
+        protected readonly ObjectManager $taxonManager,
     ) {
     }
 

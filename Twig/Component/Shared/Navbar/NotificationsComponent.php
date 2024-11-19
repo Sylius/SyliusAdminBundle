@@ -19,8 +19,8 @@ use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 class NotificationsComponent
 {
     public function __construct(
-        private readonly NotificationProviderInterface $notificationProvider,
-        private readonly bool $areNotificationsEnabled,
+        protected readonly NotificationProviderInterface $notificationProvider,
+        protected readonly bool $areNotificationsEnabled,
     ) {
     }
 

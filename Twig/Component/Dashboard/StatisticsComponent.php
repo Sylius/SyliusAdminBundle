@@ -55,8 +55,8 @@ class StatisticsComponent
      * @param ChannelRepositoryInterface<ChannelInterface> $channelRepository
      */
     public function __construct(
-        private readonly ChannelRepositoryInterface $channelRepository,
-        private readonly StatisticsProviderInterface $statisticsProvider,
+        protected readonly ChannelRepositoryInterface $channelRepository,
+        protected readonly StatisticsProviderInterface $statisticsProvider,
     ) {
     }
 

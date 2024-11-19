@@ -41,7 +41,7 @@ class ChannelSelectorComponent
     /**
      * @param ChannelRepositoryInterface<ChannelInterface> $channelRepository
      */
-    public function __construct(private readonly ChannelRepositoryInterface $channelRepository)
+    public function __construct(protected readonly ChannelRepositoryInterface $channelRepository)
     {
     }
 

@@ -44,7 +44,7 @@ class FormComponent
         FormFactoryInterface $formFactory,
         string $resourceClass,
         string $formClass,
-        private readonly TaxonSlugGeneratorInterface $slugGenerator,
+        protected readonly TaxonSlugGeneratorInterface $slugGenerator,
     ) {
         $this->initialize($repository, $formFactory, $resourceClass, $formClass);
     }
