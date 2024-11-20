@@ -37,7 +37,7 @@ final class DeleteComponent
     public string $taxonId = '';
 
     public function __construct(
-        private readonly CsrfTokenManagerInterface $csrfTokenManager,
+        protected readonly CsrfTokenManagerInterface $csrfTokenManager,
     ) {
     }
 

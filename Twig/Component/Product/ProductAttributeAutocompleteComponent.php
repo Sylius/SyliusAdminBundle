@@ -36,7 +36,7 @@ class ProductAttributeAutocompleteComponent
     use TemplatePropTrait;
 
     public function __construct(
-        private readonly ChecksumCalculator $checksumCalculator,
+        protected readonly ChecksumCalculator $checksumCalculator,
     ) {
     }
 

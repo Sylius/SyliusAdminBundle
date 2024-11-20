@@ -19,7 +19,7 @@ use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 class RenderEntityWithTemplateComponent
 {
     public function __construct(
-        private EntityManagerInterface $entityManager,
+        protected EntityManagerInterface $entityManager,
     ) {
     }
 

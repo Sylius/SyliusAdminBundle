@@ -21,8 +21,8 @@ use Symfony\UX\TwigComponent\Attribute\ExposeInTemplate;
 class UserDropdownComponent
 {
     public function __construct(
-        private readonly UrlGeneratorInterface $urlGenerator,
-        private readonly LoggedInAdminUserProviderInterface $loggedInAdminUserProvider,
+        protected readonly UrlGeneratorInterface $urlGenerator,
+        protected readonly LoggedInAdminUserProviderInterface $loggedInAdminUserProvider,
     ) {
     }
 

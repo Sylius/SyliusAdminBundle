@@ -65,9 +65,9 @@ class FormComponent
         FormFactoryInterface $formFactory,
         string $resourceClass,
         string $formClass,
-        private readonly SlugGeneratorInterface $slugGenerator,
-        private readonly RepositoryInterface $productAttributeRepository,
-        private readonly ProductFactoryInterface $productFactory,
+        protected readonly SlugGeneratorInterface $slugGenerator,
+        protected readonly RepositoryInterface $productAttributeRepository,
+        protected readonly ProductFactoryInterface $productFactory,
     ) {
         $this->initialize($productRepository, $formFactory, $resourceClass, $formClass);
     }

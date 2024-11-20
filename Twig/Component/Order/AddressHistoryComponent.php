@@ -27,7 +27,7 @@ class AddressHistoryComponent
 
     /** @param RepositoryInterface<AddressLogEntry> $addressLogRepository */
     public function __construct(
-        private readonly RepositoryInterface $addressLogRepository,
+        protected readonly RepositoryInterface $addressLogRepository,
     ) {
     }
 
