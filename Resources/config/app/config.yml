@@ -62,12 +62,18 @@ liip_imagine:
     filter_sets:
         sylius_admin_product_original: ~
         sylius_admin_avatar:
+            format: webp
+            quality: 80
             filters:
                 thumbnail: { size: [ 200, 200 ], mode: outbound }
         sylius_admin_product_thumbnail:
+            format: webp
+            quality: 80
             filters:
                 thumbnail: { size: [200, 200], mode: outbound }
         sylius_admin_product_large_thumbnail:
+            format: webp
+            quality: 80
             filters:
                 thumbnail: { size: [600, 800], mode: outbound }
 
