@@ -258,9 +258,6 @@ sylius_twig_hooks:
                 priority: 0
 
         'sylius_admin.product.update.content.form.sections.attributes.list.translations':
-            flag:
-                template: '@SyliusAdmin/product/form/sections/attributes/list/translations/flag.html.twig'
-                priority: 100
             field:
                 template: '@SyliusAdmin/product/form/sections/attributes/list/translations/field.html.twig'
                 priority: 0

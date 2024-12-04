@@ -3,11 +3,14 @@
         <div class="col-12">
             {% if translation_form.vars.name is not null %}
                 <div class="d-flex">
-                    <span class="flag flag-sm flag-country-{{ translation_form.vars.name|lower|split('_')|last }} me-2 mt-3"></span>
                     <div class="me-3 mt-1">{{ form_label(translation_form, translation_form.vars.name|sylius_locale_name) }}</div>
                 </div>
             {% else %}
-                <span class="flag flag-sm flag-country-eu me-3"></span>
+                <div class="d-flex">
+                    <div class="me-3 mt-1">
+                        <span class="col-form-label">{{ 'sylius.ui.global'|trans }}</span>
+                    </div>
+                </div>
             {% endif %}
         </div>
         <div class="col-12">

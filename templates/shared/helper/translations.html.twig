@@ -73,7 +73,6 @@
             aria-controls="translation-{{ accordion_id }}-{{ locale }}"
             {{ sylius_test_html_attribute( accordion_id ~ '-accordion', locale) }}
         >
-            <span class="flag flag-sm flag-country-{{ locale|lower|split('_')|last }} me-3"></span>
             {{ locale|sylius_locale_name }}
         </button>
     </h2>

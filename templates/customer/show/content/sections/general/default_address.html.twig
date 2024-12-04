@@ -9,7 +9,7 @@
                 {{ address.postcode }}
                 {{ address.city }},
                 {{ address|sylius_province_name|default('') }}
-                <span class="flag flag-sm flag-country-{{ address.countryCode|lower }}"></span>
+                {{ ux_icon('flagpack:' ~ address.countryCode|lower, {'class': 'flag flag-xs'}) }}
                 {{ address.countryCode|sylius_country_name }}
             </span>
         {% else %}

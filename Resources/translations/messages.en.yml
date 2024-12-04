@@ -74,6 +74,7 @@ sylius:
         create_new:
             customer_group: 'Create a new customer group'
         delete_avatar: 'Delete avatar'
+        global: 'Global'
         ip_address: 'IP address'
         language: 'Language'
         lowest_price_before_discount: 'Lowest price before discount'
