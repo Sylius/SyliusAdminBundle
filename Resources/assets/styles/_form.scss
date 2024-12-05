@@ -40,7 +40,7 @@ textarea.form-control {
 }
 
 .form-select:disabled {
-    color: var(--tblr-gray-500);
+    color: var(--tblr-gray-600);
 }
 
 .input-group {
@@ -49,4 +49,12 @@ textarea.form-control {
     .form-check {
         flex-grow: 1;
     }
+
+    .input-group-text {
+        color: var(--tblr-gray-600);
+    }
+}
+
+.form-control:focus {
+    box-shadow: none;
 }
