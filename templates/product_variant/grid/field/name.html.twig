@@ -13,14 +13,13 @@
         </span>
     {% endif %}
 {% else %}
-    <span class="ui small header">
+    <div class="fw-medium">
         {% set product = data.product %}
         {{ translation is not null and translation.name is not null ? translation.name : product.name }}
-    </span>
-    <br>
-    <div class="ui horizontal divided list">
+    </div>
+    <div class="small text-muted">
         {% for option_value in data.optionValues %}
-            <div class="item">
+            <div>
                 {{ option_value.value }}
             </div>
         {% endfor %}
