@@ -4,14 +4,14 @@
     {% set channel = channels|first %}
     <a class="" href="{{ sylius_channel_url(homepage_path, channel) }}">
         <span data-bs-toggle="tooltip" data-bs-title="{{ 'sylius.ui.view_your_store'|trans }}" data-bs-placement="right">
-            {{ ux_icon('tabler:app-window') }}
+            {{ ux_icon('tabler:arrow-up-right') }}
         </span>
     </a>
 {% elseif channels|length > 1 %}
     <div class="dropdown">
         <div type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <span data-bs-toggle="tooltip" data-bs-title="{{ 'sylius.ui.view_your_store'|trans }}" data-bs-placement="right">
-                {{ ux_icon('tabler:app-window') }}
+                {{ ux_icon('tabler:arrow-up-right') }}
             </span>
         </div>
         <ul class="dropdown-menu dropdown-menu-sm-end">
