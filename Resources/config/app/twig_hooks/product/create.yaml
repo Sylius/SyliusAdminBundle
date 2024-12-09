@@ -229,6 +229,9 @@ sylius_twig_hooks:
                 priority: 0
 
         'sylius_admin.product.create.content.form.sections.attributes.list.translations.field':
+            language:
+                template: '@SyliusAdmin/product/form/sections/attributes/list/translations/field/language.html.twig'
+                priority: 200
             label:
                 template: '@SyliusAdmin/product/form/sections/attributes/list/translations/field/label.html.twig'
                 priority: 100
