@@ -16,6 +16,7 @@
 .infinite-tree-content {
     .infinite-tree-title {
         cursor: default;
+        color: $body-color;
     }
 
     .infinite-tree-item {
@@ -43,7 +44,7 @@
                     width: 16px;
                     height: 16px;
                     margin-top: 2px;
-                    opacity: 0.5;
+                    opacity: 0.3;
                     transform: scale(0.75) rotate(0deg);
                 }
 
@@ -57,11 +58,12 @@
                     width: 16px;
                     height: 16px;
                     margin-top: 2px;
-                    opacity: 0.5;
+                    opacity: 0.2;
+                    transform: scale(0.5);
                 }
 
                 &:hover::before {
-                    opacity: 0.8 !important;
+                    opacity: 0.5 !important;
                 }
             }
 
