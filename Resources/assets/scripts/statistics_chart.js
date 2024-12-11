@@ -36,7 +36,7 @@ function renderChart() {
     },
     plotOptions: {
       bar: {
-        borderRadius: 10,
+        borderRadius: 4,
         dataLabels: {
           position: 'top', // top, center, bottom
         },

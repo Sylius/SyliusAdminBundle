@@ -41,7 +41,7 @@ export default class extends Controller {
     const { id, name, children, state } = node;
     const { depth, open, path, total } = state;
     const more = node.hasChildren();
-    const nodeMargin = 24;
+    const nodeMargin = 20;
 
     let itemPrototyp = this.itemPrototypTarget.firstElementChild.cloneNode(true);
     let togglerPrototyp = itemPrototyp.querySelector('[data-infinite-tree-toggler]');

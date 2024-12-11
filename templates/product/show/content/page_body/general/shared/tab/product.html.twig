@@ -13,9 +13,9 @@
                 <strong {{ sylius_test_html_attribute('product-variant-name') }}>{{ variant.name }}</strong>
             </div>
             {% if product.isSimple() %}
-                <div class="text-muted small" {{ sylius_test_html_attribute('product-code') }}>{{ product.code }}</div>
+                <code {{ sylius_test_html_attribute('product-code') }}>{{ product.code }}</code>
             {% else %}
-                <div class="text-muted small" {{ sylius_test_html_attribute('product-variant-code') }}>{{ variant.code }}</div>
+                <code {{ sylius_test_html_attribute('product-variant-code') }}>{{ variant.code }}</code>
             {% endif %}
         </div>
     </div>

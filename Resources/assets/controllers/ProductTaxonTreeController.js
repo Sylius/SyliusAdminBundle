@@ -41,7 +41,7 @@ export default class extends Controller {
     const { id, name, children, state } = node;
     const { depth, open, path, total, filtered, checked, indeterminate } = state;
     const more = node.hasChildren();
-    const nodeMargin = 24;
+    const nodeMargin = 20;
 
     if (filtered === false)  {
       return '';

@@ -8,11 +8,11 @@
         'warning': 'tabler:alert-triangle',
     } %}
 
-    <div class="container-xl mt-3" {{ sylius_test_html_attribute('sylius-flashes-container') }}>
+    <div class="container-xl" {{ sylius_test_html_attribute('sylius-flashes-container') }}>
         {% for type in ['success', 'error', 'info', 'warning'] %}
             {% for flash in session.flashbag.get(type) %}
                 <div
-                    class="sylius alert alert-{{ type == 'error' ? 'danger' : type }}"
+                    class="mt-3 sylius alert alert-{{ type == 'error' ? 'danger' : type }}"
                     role="alert"
                     {{ sylius_test_html_attribute('sylius-flash-message') }}
                     {{ sylius_test_html_attribute('sylius-flash-message-type', type) }}

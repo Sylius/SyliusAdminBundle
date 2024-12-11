@@ -10,7 +10,7 @@
                 href="{{ path('sylius_admin_channel_pricing_log_entry_index', parameters) }}"
                 {{ sylius_test_html_attribute('price-history-in-channel', channelPricing.channelCode) }}
             >
-                {{ ux_icon('tabler:eye') }}
+                {{ ux_icon('tabler:eye', { class: 'icon dropdown-item-icon'}) }}
                 <span>
                     <span class="text-nowrap">{{ channelPricing.channelCode|sylius_channel_name }}</span>
                 </span>
