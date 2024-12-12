@@ -1,5 +1,10 @@
 sylius_twig_hooks:
     hooks:
+        'sylius_admin.base#metatags':
+            metatags:
+                template: '@SyliusAdmin/shared/layout/base/metatags.html.twig'
+                priority: 0
+                
         'sylius_admin.base#stylesheets':
             styles:
                 template: '@SyliusAdmin/shared/layout/base/stylesheets.html.twig'
