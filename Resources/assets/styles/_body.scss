@@ -16,17 +16,10 @@
     --tblr-bg-surface: #1E2433;
 }
 
-@font-face {
-    font-family: 'Inter';
-    src: url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype-variations');
-    font-weight: 1 999;
-}
-
 body {
     --bs-body-bg: #{$body-bg};
     --bs-tertiary-bg: #{$body-bg};
     --bs-body-color: #{$body-color};
-    font-feature-settings: "cv03", "cv04", "cv11";
 }
 
 a {
