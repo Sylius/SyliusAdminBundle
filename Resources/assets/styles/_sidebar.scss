@@ -31,9 +31,10 @@
                 padding-top: 0.3rem;
                 padding-bottom: 0.3rem;
                 background: transparent;
+                color: $gray-500;
 
                 &.active {
-                    color: var(--tblr-white);
+                    color: $primary;
                 }
 
                 &:active {
