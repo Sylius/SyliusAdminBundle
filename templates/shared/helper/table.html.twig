@@ -30,11 +30,7 @@
         {% endif %}
         {% for field in definition.enabledFields|sylius_sort_by('position') %}
             <td{% if field.options.vars.td_class is defined %} class="{{ field.options.vars.td_class }}"{% endif %}>
-                {% if field.name == 'code' %}
-                    <code>{{ sylius_grid_render_field(grid, field, row) }}</code>
-                {% else %}
-                    {{ sylius_grid_render_field(grid, field, row) }}
-                {% endif %}
+                {{ sylius_grid_render_field(grid, field, row) }}
             </td>
         {% endfor %}
         {% if definition.actionGroups.item is defined and definition.getEnabledActions('item')|length > 0 %}
