@@ -7,8 +7,6 @@
  * file that was distributed with this source code.
  */
 
-/* global document */
-
 function syliusCheckAll(trigger) {
     const groupName = trigger.getAttribute('data-check-all');
     const groupItems = Array.from(document.querySelectorAll(`[data-check-all-group="${groupName}"]`));
@@ -24,18 +22,18 @@ function syliusCheckAll(trigger) {
     groupItems.forEach((item) => {
         item.addEventListener('change', () => {
             switch (groupItems.filter((filteredItem) => filteredItem.checked).length) {
-                case groupItems.length:
-                    trigger.indeterminate = false;
-                    trigger.checked = true;
-                    break;
-                case 0:
-                    trigger.indeterminate = false;
-                    trigger.checked = false;
-                    break;
-                default:
-                    trigger.indeterminate = true;
-                    trigger.checked = false;
-                    break;
+            case groupItems.length:
+                trigger.indeterminate = false;
+                trigger.checked = true;
+                break;
+            case 0:
+                trigger.indeterminate = false;
+                trigger.checked = false;
+                break;
+            default:
+                trigger.indeterminate = true;
+                trigger.checked = false;
+                break;
             }
             actionButtonsRefresh();
         });

@@ -7,21 +7,21 @@
  * file that was distributed with this source code.
  */
 
-import {ApplicationController, useDebounce} from 'stimulus-use'
+import {ApplicationController, useDebounce} from 'stimulus-use';
 import slugify from 'slugify';
 
 export default class extends ApplicationController {
-  static debounces = ['generateSlug']
-  static targets = [ 'sluggable', 'slug' ]
-  static values = { locale: String }
+    static debounces = ['generateSlug'];
+    static targets = [ 'sluggable', 'slug' ];
+    static values = { locale: String };
 
-  connect() {
-    useDebounce(this);
-  }
+    connect() {
+        useDebounce(this);
+    }
 
-  generateSlug() {
-    this.element.setAttribute('busy', '');
-    this.slugTarget.value = slugify(this.sluggableTarget.value, { locale: this.localeValue, lower: true });
-    this.element.removeAttribute('busy');
-  }
+    generateSlug() {
+        this.element.setAttribute('busy', '');
+        this.slugTarget.value = slugify(this.sluggableTarget.value, { locale: this.localeValue, lower: true });
+        this.element.removeAttribute('busy');
+    }
 }

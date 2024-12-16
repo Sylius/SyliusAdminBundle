@@ -8,8 +8,8 @@
  */
 
 window.addEventListener('sylius_admin:product:form:attributed_deleted', () => {
-  let tabs = document.getElementById('product_attribute_tabs');
-  let firstTab = tabs.querySelector('.list-group-item');
+    let tabs = document.getElementById('product_attribute_tabs');
+    let firstTab = tabs.querySelector('.list-group-item');
 
-  window.bootstrap.Tab.getOrCreateInstance(firstTab).show();
+    window.bootstrap.Tab.getOrCreateInstance(firstTab).show();
 });

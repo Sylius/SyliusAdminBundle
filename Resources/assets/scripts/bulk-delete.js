@@ -7,8 +7,6 @@
  * file that was distributed with this source code.
  */
 
-/* global document */
-
 function syliusBulkDelete(form) {
     const groupName = form.getAttribute('data-bulk-delete');
     const groupItems = Array.from(document.querySelectorAll(`input[data-check-all-group="${groupName}"]`));

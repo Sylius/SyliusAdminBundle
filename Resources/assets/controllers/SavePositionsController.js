@@ -10,47 +10,47 @@
 import { Controller } from '@hotwired/stimulus';
 
 export default class extends Controller {
-  static values = {
-    url: String,
-    csrfToken: String,
-    inputSelector: String,
-    dataKey: String
-  };
-  changedPositions = [];
-
-  connect() {
-    document.querySelectorAll(this.inputSelectorValue).forEach(input => {
-      input.addEventListener('change', (event) => this.handlePositionChange(event));
-    });
-  }
-
-  handlePositionChange(event) {
-    const input = event.target;
-    const elementId = input.getAttribute('data-id');
-    const changedPosition = this.changedPositions.find(({ id }) => id === elementId);
-
-    if (!changedPosition) {
-      this.changedPositions.push({ id: elementId, position: input.value });
-    } else {
-      changedPosition.position = input.value;
-    }
-  }
-
-  submit() {
-    const requestOptions = {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ [this.dataKeyValue]: this.changedPositions, _csrf_token: this.csrfTokenValue}),
+    static values = {
+        url: String,
+        csrfToken: String,
+        inputSelector: String,
+        dataKey: String
     };
+    changedPositions = [];
 
-    fetch(this.urlValue, requestOptions)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to move positions.');
+    connect() {
+        document.querySelectorAll(this.inputSelectorValue).forEach(input => {
+            input.addEventListener('change', (event) => this.handlePositionChange(event));
+        });
+    }
+
+    handlePositionChange(event) {
+        const input = event.target;
+        const elementId = input.getAttribute('data-id');
+        const changedPosition = this.changedPositions.find(({ id }) => id === elementId);
+
+        if (!changedPosition) {
+            this.changedPositions.push({ id: elementId, position: input.value });
+        } else {
+            changedPosition.position = input.value;
         }
+    }
 
-        window.location.reload();
-      })
-      .catch(error => console.error(error.message));
-  }
+    submit() {
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ [this.dataKeyValue]: this.changedPositions, _csrf_token: this.csrfTokenValue}),
+        };
+
+        fetch(this.urlValue, requestOptions)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to move positions.');
+                }
+
+                window.location.reload();
+            })
+            .catch(error => console.error(error.message));
+    }
 }
