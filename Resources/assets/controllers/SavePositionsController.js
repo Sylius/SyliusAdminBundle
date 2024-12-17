@@ -40,7 +40,7 @@ export default class extends Controller {
         const requestOptions = {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ [this.dataKeyValue]: this.changedPositions, _csrf_token: this.csrfTokenValue}),
+            body: JSON.stringify({ [this.dataKeyValue]: this.changedPositions, _csrf_token: this.csrfTokenValue})
         };
 
         fetch(this.urlValue, requestOptions)

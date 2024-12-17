@@ -8,12 +8,12 @@
  */
 
 import { Controller } from '@hotwired/stimulus';
-import InfiniteTree from "infinite-tree";
+import InfiniteTree from 'infinite-tree';
 
 export default class extends Controller {
     static values = {
         treeData: Array,
-        autoOpen: Boolean,
+        autoOpen: Boolean
     };
     static targets = ['tree', 'filter', 'productTaxons'];
 
@@ -33,7 +33,7 @@ export default class extends Controller {
             data: this.treeDataValue,
             autoOpen: this.autoOpenValue,
             selectable: false,
-            rowRenderer: this.rowRenderer,
+            rowRenderer: this.rowRenderer
         });
     }
 
@@ -143,7 +143,7 @@ export default class extends Controller {
             caseSensitive: false,
             exactMatch: false,
             includeAncestors: true,
-            includeDescendants: true,
+            includeDescendants: true
         });
     }
 

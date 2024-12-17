@@ -9,7 +9,7 @@ import * as bootstrap from 'bootstrap';
             new bootstrap.Dropdown(parent, {
                 popperConfig(defaultBsPopperConfig) {
                     return { ...defaultBsPopperConfig, strategy: 'fixed' };
-                },
+                }
             });
         }
     });

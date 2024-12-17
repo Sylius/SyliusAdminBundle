@@ -21,26 +21,26 @@ function renderChart() {
     const options = {
         colors: ['#32be9f'],
         fill: {
-            colors: ['#32be9f'],
+            colors: ['#32be9f']
         },
         series: [{
             name: 'Sales',
-            data: JSON.parse(statisticsChart.dataset.sales),
+            data: JSON.parse(statisticsChart.dataset.sales)
         }],
         chart: {
             toolbar: {
-                show: false,
+                show: false
             },
             height: 350,
-            type: 'bar',
+            type: 'bar'
         },
         plotOptions: {
             bar: {
                 borderRadius: 4,
                 dataLabels: {
-                    position: 'top', // top, center, bottom
-                },
-            },
+                    position: 'top' // top, center, bottom
+                }
+            }
         },
         dataLabels: {
             enabled: true,
@@ -51,17 +51,17 @@ function renderChart() {
             offsetY: -20,
             style: {
                 fontSize: '12px',
-                colors: ['#304758'],
-            },
+                colors: ['#304758']
+            }
         },
         xaxis: {
             categories: JSON.parse(statisticsChart.dataset.intervals),
             position: 'top',
             axisBorder: {
-                show: false,
+                show: false
             },
             axisTicks: {
-                show: false,
+                show: false
             },
             crosshairs: {
                 fill: {
@@ -71,28 +71,28 @@ function renderChart() {
                         colorTo: '#2a9f83',
                         stops: [0, 100],
                         opacityFrom: 0.4,
-                        opacityTo: 0.5,
-                    },
-                },
+                        opacityTo: 0.5
+                    }
+                }
             },
             tooltip: {
-                enabled: true,
-            },
+                enabled: true
+            }
         },
         yaxis: {
             axisBorder: {
-                show: false,
+                show: false
             },
             axisTicks: {
-                show: false,
+                show: false
             },
             labels: {
                 show: false,
                 formatter(val) {
                     const { currency } = statisticsChart.dataset;
                     return `${currency}${val}`;
-                },
-            },
+                }
+            }
 
         },
         title: {
@@ -100,9 +100,9 @@ function renderChart() {
             offsetY: 330,
             align: 'center',
             style: {
-                color: '#444',
-            },
-        },
+                color: '#444'
+            }
+        }
     };
 
     chart = new ApexCharts(statisticsChart, options);
@@ -124,6 +124,6 @@ if (element) {
     });
 
     observer.observe(element, {
-        attributes: true,
+        attributes: true
     });
 }

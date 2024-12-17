@@ -9,12 +9,12 @@
 
 import { Controller } from '@hotwired/stimulus';
 import { getComponent } from '@symfony/ux-live-component';
-import InfiniteTree from "infinite-tree";
+import InfiniteTree from 'infinite-tree';
 
 export default class extends Controller {
     static values = {
         treeData: Array,
-        autoOpen: Boolean,
+        autoOpen: Boolean
     };
     static targets = ['tree', 'itemPrototyp'];
 
@@ -33,7 +33,7 @@ export default class extends Controller {
             data: this.treeDataValue,
             autoOpen: this.autoOpenValue,
             selectable: false,
-            rowRenderer: (node, treeOptions) => this.rowRenderer(node, treeOptions),
+            rowRenderer: (node, treeOptions) => this.rowRenderer(node, treeOptions)
         });
     }
 
@@ -61,6 +61,6 @@ export default class extends Controller {
             togglerPrototyp.classList.add('infinite-tree-leaf');
         }
 
-        return itemPrototyp.outerHTML.replaceAll(`__TAXON_ID__`, id).replaceAll(`__TAXON_NAME__`, name);
+        return itemPrototyp.outerHTML.replaceAll('__TAXON_ID__', id).replaceAll('__TAXON_NAME__', name);
     }
 }
