@@ -1,4 +1,4 @@
-{% set path = options.link.url|default(path(options.link.route, options.link.parameters)) %}
+{% set path = options.link.url|default('') is not empty ? options.link.url : path(options.link.route, options.link.parameters) %}
 
 <form action="{{ path }}" method="post">
     <button
