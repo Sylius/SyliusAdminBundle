@@ -18,13 +18,19 @@ sylius_twig_hooks:
 
         'sylius_admin.customer.create.content.form.sections':
             general:
+                enabled: false
+
+        'sylius_admin.customer.create.content.form.sections#left':
+            general:
                 template: '@SyliusAdmin/customer/form/sections/general.html.twig'
-                priority: 200
-            extra_information:
-                template: '@SyliusAdmin/customer/form/sections/extra_information.html.twig'
                 priority: 100
             account_credentials:
                 template: '@SyliusAdmin/customer/form/sections/account_credentials.html.twig'
+                priority: 0
+
+        'sylius_admin.customer.create.content.form.sections#right':
+            extra_information:
+                template: '@SyliusAdmin/customer/form/sections/extra_information.html.twig'
                 priority: 0
 
         'sylius_admin.customer.create.content.form.sections.general':
