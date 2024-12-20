@@ -37,19 +37,25 @@
                 flex-shrink: 0;
                 height: 20px;
 
+                &.infinite-tree-open,
+                &.infinite-tree-closed {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
                 &.infinite-tree-open::before,
                 &.infinite-tree-closed::before {
-                    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></svg>');
+                    content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"/></svg>');
                     display: block;
                     width: 16px;
                     height: 16px;
                     margin-top: 2px;
-                    opacity: 0.3;
-                    transform: scale(0.75) rotate(0deg);
+                    opacity: 0.5;
                 }
 
                 &.infinite-tree-closed::before {
-                    transform: scale(0.75) rotate(-90deg);
+                    transform: rotate(-90deg);
                 }
 
                 &.infinite-tree-leaf::before {
@@ -61,15 +67,15 @@
                     opacity: 0.2;
                     transform: scale(0.5);
                 }
-
-                &:hover::before {
-                    opacity: 0.5 !important;
-                }
             }
 
             .infinite-tree-check {
                 flex-shrink: 0;
                 transform: scale(0.75);
+
+                input:hover {
+                    cursor: pointer;
+                }
             }
         }
     }
