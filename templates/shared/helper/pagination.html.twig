@@ -25,5 +25,9 @@
                 {% endfor %}
             </div>
         </div>
+    {% else %}
+        <button type="button" class="btn btn-ghost-secondary dropdown-toggle" disabled>
+            {{ 'sylius.ui.show'|trans }} {{ paginator.maxPerPage }}
+        </button>
     {% endif %}
 {% endmacro %}
