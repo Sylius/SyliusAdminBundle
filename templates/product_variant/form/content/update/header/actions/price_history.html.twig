@@ -19,7 +19,7 @@
                         class="dropdown-item{% if url is not defined %} disabled{% endif %}"
                         href="{{ url }}"
                     >
-                        {{ ux_icon(action.icon|default('tabler:eye')) }}
+                        {{ ux_icon(action.icon|default('tabler:eye'), {'class': 'icon dropdown-item-icon'}) }}
                         <span>
                             <span class="text-nowrap">{{ channel_pricing.channelCode|sylius_channel_name }}</span>
                         </span>
