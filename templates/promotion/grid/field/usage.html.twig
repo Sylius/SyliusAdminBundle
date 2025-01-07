@@ -1,4 +1,4 @@
-{% if data.usageLimit is empty %}
+{% if not data.usageLimit %}
     <div class="d-flex align-items-center gap-2">
         <div class="text-blue"><span {{ sylius_test_html_attribute('used') }}>{{ data.used }}</span> / &#8734;</div>
     </div>
