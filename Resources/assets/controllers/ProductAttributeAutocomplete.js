@@ -10,48 +10,48 @@
 import AutocompleteController from '@symfony/ux-autocomplete';
 
 export default class extends AutocompleteController {
-  observer;
-  connected = false;
+    observer;
+    connected = false;
 
-  initialize() {
-    super.initialize();
+    initialize() {
+        super.initialize();
 
-    this.element.addEventListener('change', () => {
-      this.tomSelect.sync();
-    });
-    this.observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        this.tomSelect.sync();
-      });
-    });
-    window.addEventListener('sylius_admin.product_attribute_autocomplete.clear_requested', () => {
-      this.tomSelect.clear();
-    });
-  }
-
-  connect() {
-    super.connect();
-
-    this.observer.observe(this.element, { attributes: true });
-
-    this.connected = true;
-  }
-
-  disconnect() {
-    super.disconnect();
-
-    this.observer.disconnect();
-
-    this.connected = false;
-  }
-
-  urlValueChanged() {
-    if (!this.connected) {
-      return;
+        this.element.addEventListener('change', () => {
+            this.tomSelect.sync();
+        });
+        this.observer = new MutationObserver((mutations) => {
+            mutations.forEach(() => {
+                this.tomSelect.sync();
+            });
+        });
+        window.addEventListener('sylius_admin.product_attribute_autocomplete.clear_requested', () => {
+            this.tomSelect.clear();
+        });
     }
 
-    this.disconnect();
-    this.connect();
-    this.tomSelect.refreshItems();
-  }
+    connect() {
+        super.connect();
+
+        this.observer.observe(this.element, { attributes: true });
+
+        this.connected = true;
+    }
+
+    disconnect() {
+        super.disconnect();
+
+        this.observer.disconnect();
+
+        this.connected = false;
+    }
+
+    urlValueChanged() {
+        if (!this.connected) {
+            return;
+        }
+
+        this.disconnect();
+        this.connect();
+        this.tomSelect.refreshItems();
+    }
 }

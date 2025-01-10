@@ -7,64 +7,62 @@
  * file that was distributed with this source code.
  */
 
-/* global document */
-
 (function() {
-  const menuSearchInput = document.querySelector('[data-menu-search]');
-  const menuClearButton = document.querySelector('[data-menu-search-clear]');
+    const menuSearchInput = document.querySelector('[data-menu-search]');
+    const menuClearButton = document.querySelector('[data-menu-search-clear]');
 
-  const clearInput = () => {
-    menuSearchInput.value = '';
-    menuSearchInput.dispatchEvent(new Event('input'));
-  };
+    const clearInput = () => {
+        menuSearchInput.value = '';
+        menuSearchInput.dispatchEvent(new Event('input'));
+    };
 
-  if (menuSearchInput) {
-    menuSearchInput.addEventListener('input', function(e) {
-      const query = e.target.value.toLowerCase();
-      const navItems = document.querySelectorAll('.sidebar .nav-item');
+    if (menuSearchInput) {
+        menuSearchInput.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const navItems = document.querySelectorAll('.sidebar .nav-item');
 
-      navItems.forEach(navItem => {
-        const navLink = navItem.querySelector('.nav-link');
-        const dropdownMenu = navItem.querySelector('.dropdown-menu');
-        const dropdownItems = navItem.querySelectorAll('.dropdown-item');
-        let matchFound = false;
+            navItems.forEach(navItem => {
+                const navLink = navItem.querySelector('.nav-link');
+                const dropdownMenu = navItem.querySelector('.dropdown-menu');
+                const dropdownItems = navItem.querySelectorAll('.dropdown-item');
+                let matchFound = false;
 
-        dropdownItems.forEach(item => {
-          const text = item.textContent.toLowerCase();
-          if (query === '' || text.includes(query)) {
-            item.style.display = '';
-            matchFound = true;
-          } else {
-            item.style.display = 'none';
-          }
+                dropdownItems.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (query === '' || text.includes(query)) {
+                        item.style.display = '';
+                        matchFound = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                if (matchFound || query === '') {
+                    navItem.style.display = '';
+                } else {
+                    navItem.style.display = 'none';
+                }
+
+                if (query !== '') {
+                    if (navLink) navLink.classList.add('d-flex');
+                    if (dropdownMenu) dropdownMenu.classList.add('d-flex');
+                } else {
+                    if (navLink) navLink.classList.remove('d-flex');
+                    if (dropdownMenu) dropdownMenu.classList.remove('d-flex');
+                }
+            });
         });
 
-        if (matchFound || query === '') {
-          navItem.style.display = '';
-        } else {
-          navItem.style.display = 'none';
-        }
+        menuSearchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                clearInput();
+            }
+        });
+    }
 
-        if (query !== '') {
-          if (navLink) navLink.classList.add('d-flex');
-          if (dropdownMenu) dropdownMenu.classList.add('d-flex');
-        } else {
-          if (navLink) navLink.classList.remove('d-flex');
-          if (dropdownMenu) dropdownMenu.classList.remove('d-flex');
-        }
-      });
-    });
-
-    menuSearchInput.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        clearInput();
-      }
-    });
-  }
-
-  if (menuClearButton) {
-    menuClearButton.addEventListener('click', function() {
-      clearInput();
-    });
-  }
+    if (menuClearButton) {
+        menuClearButton.addEventListener('click', function() {
+            clearInput();
+        });
+    }
 })();
