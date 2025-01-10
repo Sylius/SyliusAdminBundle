@@ -3,7 +3,7 @@
 {% endif %}
 
 {% if resource is not defined %}
-    {% set resource = hookable_metadata.context.resource %}
+    {% set resource = hookable_metadata.context.resource|default(null) %}
 {% endif %}
 
 {% form_theme form '@SyliusAdmin/shared/form_theme.html.twig' %}
