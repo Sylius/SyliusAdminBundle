@@ -13,6 +13,7 @@ import './app';
 
 import './scripts/bulk-delete';
 import './scripts/check-all';
+import './scripts/fullscreen';
 import './scripts/menu-search';
 import './scripts/spotlight';
 import './scripts/statistics_chart';
