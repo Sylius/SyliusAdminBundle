@@ -3,7 +3,7 @@
 {% if product.isSimple() %}
     {% set variant = product.variants.first %}
     {% set channels = hookable_metadata.context.channels %}
-<div class="table">
+<div class="table-responsive">
     <table class="table table-vcenter">
         <thead>
             <tr>
