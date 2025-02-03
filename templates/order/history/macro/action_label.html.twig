@@ -1,23 +1,24 @@
 {%- macro label(log) -%}
     {% if log.action == 'create' %}
-        <div class="badge rounded-pill align-middle bg-success text-light d-flex w-fit-content">
-            {{ ux_icon('tabler:plus') }}
+        <div class="status status-success">
             <div class="text-start ps-2">
                 {{ 'sylius.ui.created'|trans }}
             </div>
+            {{ ux_icon('tabler:plus') }}
         </div>
     {% elseif log.action == 'update' %}
-        <div class="badge rounded-pill align-middle bg-yellow text-dark d-flex w-fit-content">
-            {{ ux_icon('tabler:pencil') }}
+        <div class="status status-yellow">
             <div class="text-start ps-2">
                 {{ 'sylius.ui.updated'|trans }}
             </div>
+            {{ ux_icon('tabler:pencil') }}
         </div>
     {% else %}
-        <div class="badge rounded-pill align-middle bg-secondary text-light d-flex w-fit-content">
-            <div class="text-start">
+        <div class="status status-secondary">
+            <div class="text-start ps-2">
                 {{ log.action|title }}
             </div>
+            <span class="status-dot"></span>
         </div>
     {% endif %}
 {%- endmacro -%}
