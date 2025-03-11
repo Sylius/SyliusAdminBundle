@@ -1,0 +1,5 @@
+{% set log = hookable_metadata.context.log %}
+
+<div class="row" {{ sylius_test_html_attribute('address-log') }}>
+    {% hook 'details' %}
+</div>

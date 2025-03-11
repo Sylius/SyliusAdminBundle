@@ -1,0 +1,4 @@
+{% set log = hookable_metadata.context.log %}
+{% set header = (hookable_metadata.context.header|default('sylius.ui.address'))|trans %}
+
+<div class="h2">{{ header }}</div>
