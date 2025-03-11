@@ -51,7 +51,7 @@ sylius_twig_hooks:
             addresses:
                 template: '@SyliusAdmin/order/history/content/sections/addresses.html.twig'
                 priority: 0
-                
+
         'sylius_admin.order.history.content.sections.addresses':
             billing_address:
                 component: sylius_admin:order:address_history
