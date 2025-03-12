@@ -85,7 +85,7 @@ sylius_twig_hooks:
                 
         'sylius_admin.order.history.content.sections.addresses.billing_address.details':
             modification_status:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/modification_status.html.twig'
                 priority: 100
             data:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data.html.twig'
@@ -93,42 +93,42 @@ sylius_twig_hooks:
 
         'sylius_admin.order.history.content.sections.addresses.billing_address.details.modification_status':
             label:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/label.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/label.html.twig'
                 priority: 100
-            logged:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/logged.html.twig'
+            date:
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/date.html.twig'
                 priority: 0
 
         'sylius_admin.order.history.content.sections.addresses.billing_address.details.data':
             first_name:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/first_name.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/first_name.html.twig'
                 priority: 900
             last_name:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/last_name.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/last_name.html.twig'
                 priority: 800
             phone_number:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/phone_number.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/phone_number.html.twig'
                 priority: 700
             street:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/street.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/street.html.twig'
                 priority: 600
             company:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/company.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/company.html.twig'
                 priority: 500
             city:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/city.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/city.html.twig'
                 priority: 400
             postcode:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/postcode.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/postcode.html.twig'
                 priority: 300
             country_code:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/country_code.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/country_code.html.twig'
                 priority: 200
             province_code:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/province_code.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/province_code.html.twig'
                 priority: 100
             province_name:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/province_name.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/province_name.html.twig'
                 priority: 0
 
         'sylius_admin.order.history.content.sections.addresses.shipping_address':
@@ -146,7 +146,7 @@ sylius_twig_hooks:
         
         'sylius_admin.order.history.content.sections.addresses.shipping_address.details':
             modification_status:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/modification_status.html.twig'
                 priority: 100
             data:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data.html.twig'
@@ -154,41 +154,41 @@ sylius_twig_hooks:
         
         'sylius_admin.order.history.content.sections.addresses.shipping_address.details.modification_status':
             label:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/label.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/label.html.twig'
                 priority: 100
-            logged:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/logged.html.twig'
+            date:
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/date.html.twig'
                 priority: 0
         
         'sylius_admin.order.history.content.sections.addresses.shipping_address.details.data':
             first_name:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/first_name.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/first_name.html.twig'
                 priority: 900
             last_name:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/last_name.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/last_name.html.twig'
                 priority: 800
             phone_number:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/phone_number.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/phone_number.html.twig'
                 priority: 700
             street:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/street.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/street.html.twig'
                 priority: 600
             company:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/company.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/company.html.twig'
                 priority: 500
             city:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/city.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/city.html.twig'
                 priority: 400
             postcode:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/postcode.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/postcode.html.twig'
                 priority: 300
             country_code:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/country_code.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/country_code.html.twig'
                 priority: 200
             province_code:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/province_code.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/province_code.html.twig'
                 priority: 100
             province_name:
-                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/province_name.html.twig'
+                template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/province_name.html.twig'
                 priority: 0
 
