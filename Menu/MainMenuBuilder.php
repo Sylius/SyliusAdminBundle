@@ -41,6 +41,7 @@ final readonly class MainMenuBuilder
         $this->addMarketingSubMenu($menu);
         $this->addConfigurationSubMenu($menu);
         $this->addOfficialSupportSubMenu($menu);
+        $this->addAdministrationSubMenu($menu);
 
         $this->eventDispatcher->dispatch(new MenuBuilderEvent($this->factory, $menu), self::EVENT_NAME);
 
@@ -392,4 +393,27 @@ final readonly class MainMenuBuilder
             ->setLabelAttribute('icon', 'tabler:certificate')
         ;
     }
+
+ private function addAdministrationSubMenu(ItemIgit reset HEAD~1nterface $menu): void
+ {
+     $configuration = $menu
+         ->addChild('addAdministration_support')
+         ->setLabel('sylius.ui.administration')
+         ->setLabelAttribute('icon', 'tabler:lock')
+     ;
+
+     $sylius_plus = $configuration
+         ->addChild('Roles')
+         ->setUri('https://sylius.com/plus/')
+         ->setLinkAttribute('target', '_blank')
+         ->setLabel('sylius.ui.roles')
+         ->setLabelAttribute('icon', 'tabler:plus')
+     ;
+
+     $sylius_plus
+         ->setExtra('plus_logo', '/sylius-plus-sidebar.svg')
+         ->setExtra('safe_label', true)
+     ;
+ }
+
 }
