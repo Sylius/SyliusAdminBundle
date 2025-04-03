@@ -71,7 +71,7 @@ sylius_twig_hooks:
                 priority: 0
 
         'sylius_admin.order.history.content.sections.addresses.billing_address':
-            header: 
+            header:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/header.html.twig'
                 priority: 100
             details:
@@ -82,7 +82,7 @@ sylius_twig_hooks:
             title:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/header/title.html.twig'
                 priority: 0
-                
+
         'sylius_admin.order.history.content.sections.addresses.billing_address.details':
             modification_status:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/modification_status.html.twig'
@@ -138,12 +138,12 @@ sylius_twig_hooks:
             details:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details.html.twig'
                 priority: 100
-        
+
         'sylius_admin.order.history.content.sections.addresses.shipping_address.header':
             title:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/header/title.html.twig'
                 priority: 0
-        
+
         'sylius_admin.order.history.content.sections.addresses.shipping_address.details':
             modification_status:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/modification_status.html.twig'
@@ -151,7 +151,7 @@ sylius_twig_hooks:
             data:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data.html.twig'
                 priority: 0
-        
+
         'sylius_admin.order.history.content.sections.addresses.shipping_address.details.modification_status':
             label:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/label.html.twig'
@@ -159,7 +159,7 @@ sylius_twig_hooks:
             date:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/modification_status/date.html.twig'
                 priority: 0
-        
+
         'sylius_admin.order.history.content.sections.addresses.shipping_address.details.data':
             first_name:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/first_name.html.twig'
@@ -191,4 +191,3 @@ sylius_twig_hooks:
             province_name:
                 template: '@SyliusAdmin/order/history/common/sections/addresses/address/details/data/province_name.html.twig'
                 priority: 0
-
