@@ -394,25 +394,24 @@ final readonly class MainMenuBuilder
         ;
     }
 
- private function addAdministrationSubMenu(ItemIgit reset HEAD~1nterface $menu): void
+ private function addAdministrationSubMenu(ItemInterface $menu): void
  {
-     $configuration = $menu
-         ->addChild('addAdministration_support')
+     $Administration = $menu
+         ->addChild('administration')
          ->setLabel('sylius.ui.administration')
          ->setLabelAttribute('icon', 'tabler:lock')
      ;
 
-     $sylius_plus = $configuration
-         ->addChild('Roles')
+     $syliusPlus = $Administration
+         ->addChild('roles')
          ->setUri('https://sylius.com/plus/')
          ->setLinkAttribute('target', '_blank')
          ->setLabel('sylius.ui.roles')
          ->setLabelAttribute('icon', 'tabler:plus')
      ;
 
-     $sylius_plus
-         ->setExtra('plus_logo', '/sylius-plus-sidebar.svg')
-         ->setExtra('safe_label', true)
+     $syliusPlus
+         ->setExtra('plus_logo', true)
      ;
  }
 
