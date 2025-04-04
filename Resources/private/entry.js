@@ -10,6 +10,7 @@ import 'sylius/ui-resources/sass/main.scss';
 import './sass/main.scss';
 
 import './img/admin-logo.svg';
+import './img/sylius-plus-sidebar.svg';
 
 import 'sylius/ui-resources/img/200x200.png';
 import 'sylius/ui-resources/img/50x50.png';

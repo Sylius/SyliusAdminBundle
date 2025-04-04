@@ -102,6 +102,15 @@ a {
         background: $sylius-brand-color !important;
         border-radius: 0 99px 99px 0 !important;
     }
+    .item .sidebar-badge{
+        position: relative;
+    }
+    .item .navbar-plus-badge {
+        position: absolute;
+        right:0;
+        top: -1px;
+        width: 4.5rem;
+    }
 }
 
 // ----------------------------------
