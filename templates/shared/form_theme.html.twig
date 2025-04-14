@@ -40,12 +40,11 @@
 {% endblock %}
 
 {% block sylius_channel_collection_row %}
-    {% set tab_group_id = random() %}
     <div{% with {attr: row_attr|merge({class: row_attr.class|default('mb-3 card')|trim})} %}{{ block('attributes') }}{% endwith %}>
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs" data-bs-toggle="tabs" role="tablist">
                 {% for channel_code, channel_configuration in form %}
-                    {% set tab_id = channel_code ~ '_' ~ tab_group_id %}
+                    {% set tab_id = channel_code ~ '_' ~ id %}
                     {% set channel_error_count = form.vars.channels_errors_count[channel_code] %}
                     <li class="nav-item">
                         <a
@@ -68,7 +67,7 @@
         <div class="card-body">
             <div class="tab-content">
                 {% for channel_code, channel_configuration in form %}
-                    {% set tab_id = channel_code ~ '_' ~ tab_group_id %}
+                    {% set tab_id = channel_code ~ '_' ~ id %}
                     <div
                         class="tab-pane fade {% if loop.index0 == 0 %}show active{% endif %}"
                         id="{{ tab_id }}"
