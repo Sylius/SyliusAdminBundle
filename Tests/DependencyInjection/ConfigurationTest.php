@@ -21,7 +21,7 @@ final class ConfigurationTest extends TestCase
 {
     use ConfigurationTestCaseTrait;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_turns_on_hub_notifications_by_default(): void
     {
         $this->assertProcessedConfigurationEquals(
@@ -31,7 +31,7 @@ final class ConfigurationTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function its_hub_notifications_can_be_turned_off(): void
     {
         $this->assertProcessedConfigurationEquals(
@@ -41,7 +41,7 @@ final class ConfigurationTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_sets_default_twigs_payment_method_excluded_gateways(): void
     {
         $this->assertProcessedConfigurationEquals(
@@ -51,7 +51,7 @@ final class ConfigurationTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_allows_to_configure_twigs_payment_method_excluded_gateways(): void
     {
         $this->assertProcessedConfigurationEquals(

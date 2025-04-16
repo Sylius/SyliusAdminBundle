@@ -76,7 +76,7 @@ final class HubNotificationProviderTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_an_empty_array_if_client_exception_occurs(): void
     {
         $request = $this->prophesize(RequestInterface::class);
@@ -99,7 +99,7 @@ final class HubNotificationProviderTest extends TestCase
         $this->assertEmpty($this->hubNotificationsProvider->getNotifications());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_an_empty_array_if_the_current_version_is_the_same_as_latest(): void
     {
         $request = $this->prophesize(RequestInterface::class);
@@ -127,7 +127,7 @@ final class HubNotificationProviderTest extends TestCase
         $this->assertEmpty($this->hubNotificationsProvider->getNotifications());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_returns_a_notification_if_the_current_version_is_different_than_latest(): void
     {
         $request = $this->prophesize(RequestInterface::class);

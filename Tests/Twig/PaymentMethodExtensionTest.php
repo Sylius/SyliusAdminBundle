@@ -18,7 +18,7 @@ use Sylius\Bundle\AdminBundle\Twig\PaymentMethodExtension;
 
 final class PaymentMethodExtensionTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_gets_payment_gateways(): void
     {
         $gatewayFactories = ['offline' => 'Offline', 'stripe' => 'Stripe'];

@@ -18,7 +18,7 @@ use Sylius\Bundle\AdminBundle\Console\Command\Factory\QuestionFactory;
 
 final class QuestionFactoryTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_creates_email_question(): void
     {
         $questionFactory = new QuestionFactory();
@@ -29,7 +29,7 @@ final class QuestionFactoryTest extends TestCase
         $this->assertEquals('test@example.com', $question->getValidator()('test@example.com'));
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_creates_email_question_with_invalid_email(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -41,7 +41,7 @@ final class QuestionFactoryTest extends TestCase
         $emailQuestion->getValidator()('invalid-email');
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_creates_email_question_with_null_email(): void
     {
         $this->expectException(\InvalidArgumentException::class);
@@ -53,7 +53,7 @@ final class QuestionFactoryTest extends TestCase
         $emailQuestion->getValidator()(null);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_creates_question_with_not_null_validator(): void
     {
         $questionFactory = new QuestionFactory();
@@ -64,7 +64,7 @@ final class QuestionFactoryTest extends TestCase
         $this->assertEquals('test', $question->getValidator()('test'));
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_creates_question_with_not_null_validator_with_null_value(): void
     {
         $this->expectException(\InvalidArgumentException::class);

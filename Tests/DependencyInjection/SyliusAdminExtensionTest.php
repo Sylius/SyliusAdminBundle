@@ -18,7 +18,7 @@ use Sylius\Bundle\AdminBundle\DependencyInjection\SyliusAdminExtension;
 
 final class SyliusAdminExtensionTest extends AbstractExtensionTestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_loads_notifications_hub_enabled_parameter_value_properly(): void
     {
         $this->load(['notifications' => ['hub_enabled' => true]]);
@@ -28,7 +28,7 @@ final class SyliusAdminExtensionTest extends AbstractExtensionTestCase
         $this->assertContainerBuilderHasParameter('sylius.admin.notification.hub_enabled', false);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_loads_twig_payment_method_excluded_gateways_properly(): void
     {
         $this->container->setParameter('kernel.environment', 'dev');

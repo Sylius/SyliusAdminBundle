@@ -67,7 +67,7 @@ final class CreateAdminUserHandlerTest extends TestCase
         $this->adminUserRepository = $this->createMock(UserRepositoryInterface::class);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_creates_an_admin_user_if_there_is_no_violations(): void
     {
         $constraintViolationList = new ConstraintViolationList([]);
@@ -81,7 +81,7 @@ final class CreateAdminUserHandlerTest extends TestCase
         $createAdminUserHandler($this->createAdminUserMessage());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_throws_an_exception_if_violates_any_constraints(): void
     {
         $firstConstraintViolation = new ConstraintViolation('first_violation_error', '', [], '', '', '');
