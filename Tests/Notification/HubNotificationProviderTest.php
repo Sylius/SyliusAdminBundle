@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace Sylius\Bundle\AdminBundle\Tests\Notification;
 
-use PHPUnit\Framework\Attributes\Test;
 use GuzzleHttp\Exception\ConnectException;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
@@ -83,7 +83,7 @@ final class HubNotificationProviderTest extends TestCase
         $request = $this->prophesize(RequestInterface::class);
         $stream = $this->prophesize(StreamInterface::class);
 
-        $this->cache->get('latest_sylius_version', Argument::type('callable'))->will(fn($args) => $args[1]());
+        $this->cache->get('latest_sylius_version', Argument::type('callable'))->will(fn ($args) => $args[1]());
 
         $this->requestStack->getCurrentRequest()->willReturn(new Request());
         $this->clock->now()->willReturn(new \DateTimeImmutable());
@@ -105,7 +105,7 @@ final class HubNotificationProviderTest extends TestCase
         $stream = $this->prophesize(StreamInterface::class);
         $externalResponse = $this->prophesize(ResponseInterface::class);
 
-        $this->cache->get('latest_sylius_version', Argument::type('callable'))->will(fn($args) => $args[1]());
+        $this->cache->get('latest_sylius_version', Argument::type('callable'))->will(fn ($args) => $args[1]());
 
         $this->requestStack->getCurrentRequest()->willReturn(new Request());
         $this->clock->now()->willReturn(new \DateTimeImmutable());
@@ -131,7 +131,7 @@ final class HubNotificationProviderTest extends TestCase
         $stream = $this->prophesize(StreamInterface::class);
         $externalResponse = $this->prophesize(ResponseInterface::class);
 
-        $this->cache->get('latest_sylius_version', Argument::type('callable'))->will(fn($args) => $args[1]());
+        $this->cache->get('latest_sylius_version', Argument::type('callable'))->will(fn ($args) => $args[1]());
 
         $this->requestStack->getCurrentRequest()->willReturn(new Request());
         $this->clock->now()->willReturn(new \DateTimeImmutable());
