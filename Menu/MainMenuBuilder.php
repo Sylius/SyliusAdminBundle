@@ -407,10 +407,6 @@ final readonly class MainMenuBuilder
          ->setUri('https://sylius.com/plus/')
          ->setLinkAttribute('target', '_blank')
          ->setLabel('sylius.ui.roles')
-         ->setLabelAttribute('icon', 'tabler:plus')
-     ;
-
-     $syliusPlus
          ->setExtra('plus_logo', true)
      ;
  }
