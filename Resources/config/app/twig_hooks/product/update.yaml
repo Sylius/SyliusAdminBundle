@@ -169,6 +169,18 @@ sylius_twig_hooks:
                 priority: 0
 
         'sylius_admin.product.update.content.form.sections.channel_pricing':
+            price:
+                template: '@SyliusAdmin/product/form/sections/channel_pricing/price.html.twig'
+                priority: 200
+                enabled: false
+            original_price:
+                template: '@SyliusAdmin/product/form/sections/channel_pricing/original_price.html.twig'
+                priority: 100
+                enabled: false
+            minimum_price:
+                template: '@SyliusAdmin/product/form/sections/channel_pricing/minimum_price.html.twig'
+                priority: 0
+                enabled: false
             header:
                 template: '@SyliusAdmin/product/form/sections/channel_pricing/header.html.twig'
                 priority: 200
