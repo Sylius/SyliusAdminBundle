@@ -1064,6 +1064,9 @@ sylius_ui:
             blocks:
                 additional_information:
                     template: '@SyliusAdmin/AdminUser/Form/_additionalInformation.html.twig'
+                    priority: 30
+                roles:
+                    template: '@SyliusAdmin/AdminUser/Form/_roles.html.twig'
                     priority: 20
                 preferences:
                     template: '@SyliusAdmin/AdminUser/Form/_preferences.html.twig'
