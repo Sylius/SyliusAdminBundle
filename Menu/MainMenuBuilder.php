@@ -397,12 +397,12 @@ final readonly class MainMenuBuilder
  private function addAdministrationSubMenu(ItemInterface $menu): void
  {
      $Administration = $menu
-         ->addChild('administration')
+         ->addChild('sylius.ui.administration')
          ->setLabel('sylius.ui.administration')
          ->setLabelAttribute('icon', 'tabler:lock')
      ;
 
-     $syliusPlus = $Administration
+     $Administration
          ->addChild('roles')
          ->setUri('https://sylius.com/plus/')
          ->setLinkAttribute('target', '_blank')
