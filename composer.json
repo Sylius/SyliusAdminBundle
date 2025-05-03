@@ -11,7 +11,8 @@
         "ui",
         "admin interface",
         "admin",
-        "backend"
+        "backend",
+        "symfony-ux"
     ],
     "homepage": "https://sylius.com",
     "license": "MIT",

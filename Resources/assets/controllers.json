@@ -11,6 +11,53 @@
           "tom-select/dist/css/tom-select.bootstrap5.css": false
         }
       }
+    },
+    "@symfony/ux-live-component": {
+      "live": {
+        "enabled": true,
+        "fetch": "eager",
+        "autoimport": {
+          "@symfony/ux-live-component/dist/live.min.css": true
+        }
+      }
+    },
+    "@sylius/admin-bundle": {
+      "slug": {
+        "enabled": true,
+        "fetch": "lazy"
+      },
+      "taxon-slug": {
+        "enabled": true,
+        "fetch": "lazy"
+      },
+      "taxon-tree": {
+        "enabled": true,
+        "fetch": "lazy"
+      },
+      "delete-taxon": {
+        "enabled": true,
+        "fetch": "lazy"
+      },
+      "product-attribute-autocomplete": {
+        "enabled": true,
+        "fetch": "lazy"
+      },
+      "product-taxon-tree": {
+        "enabled": true,
+        "fetch": "lazy"
+      },
+      "save-positions": {
+        "enabled": true,
+        "fetch": "lazy"
+      },
+      "compound-form-errors": {
+        "enabled": true,
+        "fetch": "lazy"
+      },
+      "tabs-errors": {
+        "enabled": true,
+        "fetch": "lazy"
+      }
     }
   },
   "entrypoints": []
