@@ -23,10 +23,10 @@ sylius_twig_hooks:
         'sylius_admin.admin_user.update.content.form.sections#left':
             account:
                 template: '@SyliusAdmin/admin_user/form/sections/account.html.twig'
-                priority: 100
+                priority: 0
             roles:
                 template: '@SyliusAdmin/admin_user/form/sections/roles.html.twig'
-                priority: 0
+                priority: -100
 
         'sylius_admin.admin_user.update.content.form.sections#right':
             personal_information:
