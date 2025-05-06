@@ -1064,10 +1064,10 @@ sylius_ui:
             blocks:
                 additional_information:
                     template: '@SyliusAdmin/AdminUser/Form/_additionalInformation.html.twig'
-                    priority: 30
+                    priority: 20
                 roles:
                     template: '@SyliusAdmin/AdminUser/Form/_roles.html.twig'
-                    priority: 20
+                    priority: 15
                 preferences:
                     template: '@SyliusAdmin/AdminUser/Form/_preferences.html.twig'
                     priority: 10
