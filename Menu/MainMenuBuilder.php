@@ -393,22 +393,6 @@ final readonly class MainMenuBuilder
             ->setLabelAttribute('icon', 'tabler:certificate')
         ;
     }
-    private function addAdministrationSubMenu(ItemInterface $menu): void
-    {
-        $administration = $menu
-            ->addChild('sylius.ui.administration')
-            ->setLabel('sylius.ui.administration')
-            ->setLabelAttribute('icon', 'tabler:lock')
-        ;
-
-        $administration
-            ->addChild('roles')
-            ->setUri('https://sylius.com/plus/?utm_source=product&utm_medium=placeholder&utm_campaign=rbac-placeholder')
-            ->setLinkAttribute('target', '_blank')
-            ->setLabel('sylius.ui.roles')
-            ->setExtra('plus_logo', true)
-        ;
-    }
 
     private function addAdministrationSubMenu(ItemInterface $menu): void
     {
