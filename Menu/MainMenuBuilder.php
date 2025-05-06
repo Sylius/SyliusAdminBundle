@@ -393,6 +393,7 @@ final readonly class MainMenuBuilder
             ->setLabelAttribute('icon', 'tabler:certificate')
         ;
     }
+
     private function addAdministrationSubMenu(ItemInterface $menu): void
     {
         $administration = $menu
