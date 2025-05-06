@@ -403,7 +403,7 @@ final readonly class MainMenuBuilder
 
         $administration
             ->addChild('roles')
-            ->setUri('https://sylius.com/plus/?utm_source=sylius_admin&utm_medium=sidebar_menu&utm_campaign=sylius_plus_promo')
+            ->setUri('https://sylius.com/plus/?utm_source=product&utm_medium=placeholder&utm_campaign=rbac-placeholder')
             ->setLinkAttribute('target', '_blank')
             ->setLabel('sylius.ui.roles')
             ->setExtra('plus_logo', true)
