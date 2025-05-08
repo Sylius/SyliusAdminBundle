@@ -375,7 +375,7 @@ final class MainMenuBuilder
         $administration = $menu
             ->addChild('sylius.ui.administration')
             ->setLabel('sylius.ui.administration')
-            ->setLabelAttribute('icon', 'tabler:lock')
+            ->setLabelAttribute('icon', 'lock')
         ;
 
         $administration
@@ -383,6 +383,7 @@ final class MainMenuBuilder
             ->setUri('https://sylius.com/plus/?utm_source=product&utm_medium=placeholder&utm_campaign=rbac-placeholder')
             ->setLinkAttribute('target', '_blank')
             ->setLabel('sylius.ui.roles')
+            ->setLabelAttribute('icon', 'users')
             ->setExtra('plus_logo', true)
         ;
     }
