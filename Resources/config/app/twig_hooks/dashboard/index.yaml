@@ -72,10 +72,14 @@ sylius_twig_hooks:
 
         'sylius_admin.dashboard.index.content.latest_statistics':
             new_customers:
+                enabled: false
                 component: 'sylius_admin:dashboard:new_customers'
                 props:
                     template: '@SyliusAdmin/dashboard/index/component/new_customers.html.twig'
                 priority: 100
+            pending_actions:
+                template: '@SyliusAdmin/dashboard/index/component/pending_actions.html.twig'
+                priority: 0
             new_orders:
                 component: 'sylius_admin:dashboard:new_orders'
                 props:
