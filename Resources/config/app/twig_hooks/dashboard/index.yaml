@@ -86,3 +86,19 @@ sylius_twig_hooks:
                     channelCode: '@=_context.channel_code'
                     template: '@SyliusAdmin/dashboard/index/component/new_orders.html.twig'
                 priority: 0
+
+        'sylius_admin.dashboard.index.content.latest_statistics.pending_actions':
+            header:
+                template: '@SyliusAdmin/dashboard/index/component/pending_actions/header.html.twig'
+                priority: 100
+            body:
+                template: '@SyliusAdmin/dashboard/index/component/pending_actions/body.html.twig'
+                priority: 0
+
+        'sylius_admin.dashboard.index.content.latest_statistics.pending_actions.body':
+            title:
+                template: '@SyliusAdmin/dashboard/index/component/pending_actions/body/title.html.twig'
+                priority: 100
+            quantity:
+                template: '@SyliusAdmin/dashboard/index/component/pending_actions/body/quantity.html.twig'
+                priority: 0

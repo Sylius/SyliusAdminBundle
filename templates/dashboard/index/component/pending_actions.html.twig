@@ -1,41 +1,5 @@
-{% set todo_items = [{
-    'title': '<strong>Orders</strong> to process',
-    'quantity': 12,
-    'link': path('sylius_admin_order_index')
-}, {
-    'title': '<strong>Shipments</strong> to process',
-    'quantity': 5,
-    'link': path('sylius_admin_shipment_index')
-}, {
-    'title': '<strong>Reviews</strong> to approve',
-    'quantity': 3,
-    'link': path('sylius_admin_product_review_index')
-}, {
-    'title': '<strong>Customers</strong> to approve',
-    'quantity': 8,
-    'link': path('sylius_admin_customer_index')
-}, {
-    'title': '<strong>Overdue</strong> payments',
-    'quantity': 2,
-    'link': path('sylius_admin_payment_index')
-}] %}
-
 <div class="col-12 col-md-6 pb-3">
     <div class="card mb-3 h-100">
-        <div class="card-header">
-            <h3 class="card-title">{{ 'sylius.ui.pending_actions'|trans }}</h3>
-        </div>
-        <div class="list-group list-group-flush">
-            <div class="list-group-header fs-5 fw-bold text-secondary lh-base">{{ 'sylius.ui.item'|trans }}</div>
-            {% for todo_item in todo_items %}
-                <a href="{{ todo_item.link }}" class="d-flex align-items-center justify-content-between list-group-item list-group-item-action border-bottom">
-                    <div>{{ todo_item.title|raw }}</div>
-                    <div class="d-flex align-items-center gap-4">
-                        <span class="badge rounded-pill bg-dark-lt text-default-fg py-2 px-3 fs-4 fw-bold my-1">{{ todo_item.quantity }}</span>
-                        {{ ux_icon('tabler:chevron-right') }}
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
+        {% hook 'pending_actions' %}
     </div>
 </div>

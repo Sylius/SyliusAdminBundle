@@ -1,0 +1,6 @@
+{% set todo_item = hookable_metadata.context.todo_item %}
+
+<div class="d-flex align-items-center gap-4">
+    <span class="badge rounded-pill bg-dark-lt text-default-fg py-2 px-3 fs-4 fw-bold my-1">{{ todo_item.quantity }}</span>
+    {{ ux_icon('tabler:chevron-right') }}
+</div>
