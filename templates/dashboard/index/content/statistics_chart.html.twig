@@ -1,6 +1,8 @@
 {% set statistics_data = hookable_metadata.context.statistics_data %}
 {% set period = hookable_metadata.context.period %}
 
+{% set orders_count = ['37', '50', '0', '12', '28', '15', '32', '31', '40', '34', '25', '17'] %}
+
 <div class="card mb-3">
     <div data-loading>
         <div class="sylius-loader">
@@ -63,6 +65,6 @@
                 </button>
             </div>
         </div>
-        <div id="statistics-chart" class="chart-lg" data-intervals="{{ statistics_data.sales_summary.intervals|json_encode }}" data-sales="{{ statistics_data.sales_summary.sales|json_encode }}" data-currency="{{ statistics_data.currency_symbol }}"></div>
+        <div id="statistics-chart" class="chart-lg" data-intervals="{{ statistics_data.sales_summary.intervals|json_encode }}" data-sales="{{ statistics_data.sales_summary.sales|json_encode }}" data-orders-count="{{ orders_count|json_encode }}" data-currency="{{ statistics_data.currency_symbol }}"></div>
     </div>
 </div>
