@@ -27,7 +27,7 @@ function renderChart() {
             name: 'Sales',
             data: JSON.parse(statisticsChart.dataset.sales)
         }, {
-            name: 'Orders count',
+            name: 'Paid orders count',
             data: JSON.parse(statisticsChart.dataset.ordersCount)
         }],
         chart: {
