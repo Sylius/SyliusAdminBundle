@@ -26,6 +26,9 @@
         background: transparent;
     }
 }
+.navbar-collapse .nav-link:focus-visible {
+    outline: solid 2px rgb(153, 200, 255);
+}
 .navbar-plus-badge{
     width: 50px;
 }
