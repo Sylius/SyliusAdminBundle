@@ -28,7 +28,7 @@ function renderChart() {
             data: JSON.parse(statisticsChart.dataset.sales)
         }, {
             name: 'Paid orders count',
-            data: JSON.parse(statisticsChart.dataset.ordersCount)
+            data: JSON.parse(statisticsChart.dataset.paidOrdersCount)
         }],
         chart: {
             toolbar: {

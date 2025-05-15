@@ -86,7 +86,7 @@ class StatisticsComponent
                 },
                 array_column($saleList, 'total'),
             ),
-            'orders_count' => array_column($saleList, 'count'),
+            'paid_orders_count' => array_column($saleList, 'paidOrdersCount'),
         ];
 
         return [
