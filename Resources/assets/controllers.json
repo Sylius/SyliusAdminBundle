@@ -23,40 +23,58 @@
     },
     "@sylius/admin-bundle": {
       "slug": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/SlugController.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       },
       "taxon-slug": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/TaxonSlugController.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       },
       "taxon-tree": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/TaxonTreeController.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       },
       "delete-taxon": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/DeleteTaxonController.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       },
       "product-attribute-autocomplete": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/ProductAttributeAutocomplete.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       },
       "product-taxon-tree": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/ProductTaxonTreeController.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       },
       "save-positions": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/SavePositionsController.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       },
       "compound-form-errors": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/CompoundFormErrorsController.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       },
       "tabs-errors": {
-        "enabled": true,
-        "fetch": "lazy"
+        "main": "controllers/TabsErrorsController.js",
+        "webpackMode": "lazy",
+        "fetch": "lazy",
+        "enabled": true
       }
     }
   },
