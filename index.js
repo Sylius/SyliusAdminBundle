@@ -18,7 +18,7 @@ class SyliusAdmin {
     static getBaseWebpackConfig(rootDir) {
         this._prepareWebpackConfig(rootDir);
         Encore
-            .addEntry('admin-entry', path.resolve(__dirname, 'Resources/assets/entrypoint.js'))
+            .addEntry('admin-entry', path.resolve(__dirname, 'Resources/assets/entrypoint.js'));
 
         const adminConfig = Encore.getWebpackConfig();
 
@@ -64,7 +64,7 @@ class SyliusAdmin {
             .enableSassLoader((options) => {
                 // eslint-disable-next-line no-param-reassign
                 options.additionalData = `$rootDir: '${rootDir}';`;
-            })
+            });
     }
 }
 
