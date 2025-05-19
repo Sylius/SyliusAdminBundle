@@ -1,0 +1,12 @@
+{% set pending_action = pendingAction %}
+
+<a
+    href="{{ path(pending_action.route, pending_action.route_parameters|default([])) }}"
+    class="d-flex align-items-center justify-content-between list-group-item list-group-item-action border-bottom"
+>
+    <div><strong>{{ pending_action.resource_label|trans }}</strong> {{ pending_action.sub_label|trans }}</div>
+    <div class="d-flex align-items-center gap-4">
+        <span class="badge rounded-pill bg-dark-lt text-default-fg py-2 px-3 fs-4 fw-bold my-1">{{ count }}</span>
+        {{ ux_icon('tabler:chevron-right') }}
+    </div>
+</a>
