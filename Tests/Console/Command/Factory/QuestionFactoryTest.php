@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\AdminBundle\Tests\Console\Command\Factory;
+namespace Tests\Sylius\Bundle\AdminBundle\Console\Command\Factory;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

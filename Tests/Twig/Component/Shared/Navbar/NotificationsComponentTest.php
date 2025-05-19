@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\AdminBundle\Tests\Twig\Component\Shared\Navbar;
+namespace Tests\Sylius\Bundle\AdminBundle\Twig\Component\Shared\Navbar;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\AdminBundle\Tests\Action\Account;
+namespace Tests\Sylius\Bundle\AdminBundle\Action\Account;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -36,102 +36,102 @@ use Twig\Environment;
 
 final class RequestPasswordResetActionTest extends TestCase
 {
-    private FormFactoryInterface&MockObject $formFactoryMock;
+    private FormFactoryInterface&MockObject $formFactory;
 
-    private MessageBusInterface&MockObject $messageBusMock;
+    private MessageBusInterface&MockObject $messageBus;
 
-    private MockObject&RequestStack $requestStackMock;
+    private MockObject&RequestStack $requestStack;
 
-    private MockObject&RouterInterface $routerMock;
+    private MockObject&RouterInterface $router;
 
-    private Environment&MockObject $twigMock;
+    private Environment&MockObject $twig;
 
-    private MockObject&Session $sessionMock;
+    private MockObject&Session $session;
 
-    private FlashBagInterface&MockObject $flashBagMock;
+    private FlashBagInterface&MockObject $flashBag;
 
     private RequestPasswordResetAction $requestPasswordResetAction;
 
     protected function setUp(): void
     {
-        $this->formFactoryMock = $this->createMock(FormFactoryInterface::class);
-        $this->messageBusMock = $this->createMock(MessageBusInterface::class);
-        $this->requestStackMock = $this->createMock(RequestStack::class);
-        $this->routerMock = $this->createMock(RouterInterface::class);
-        $this->twigMock = $this->createMock(Environment::class);
-        $this->sessionMock = $this->createMock(Session::class);
-        $this->flashBagMock = $this->createMock(FlashBagInterface::class);
+        $this->formFactory = $this->createMock(FormFactoryInterface::class);
+        $this->messageBus = $this->createMock(MessageBusInterface::class);
+        $this->requestStack = $this->createMock(RequestStack::class);
+        $this->router = $this->createMock(RouterInterface::class);
+        $this->twig = $this->createMock(Environment::class);
+        $this->session = $this->createMock(Session::class);
+        $this->flashBag = $this->createMock(FlashBagInterface::class);
 
         $this->requestPasswordResetAction = new RequestPasswordResetAction(
-            $this->formFactoryMock,
-            $this->messageBusMock,
-            $this->requestStackMock,
-            $this->routerMock,
-            $this->twigMock,
+            $this->formFactory,
+            $this->messageBus,
+            $this->requestStack,
+            $this->router,
+            $this->twig,
         );
     }
 
     public function testSendsResetPasswordRequestToMessageBus(): void
     {
-        $formMock = $this->createMock(FormInterface::class);
-        $requestMock = $this->createMock(Request::class);
-        $attributesBagMock = $this->createMock(ParameterBag::class);
+        $form = $this->createMock(FormInterface::class);
+        $request = $this->createMock(Request::class);
+        $attributesBag = $this->createMock(ParameterBag::class);
 
-        $this->formFactoryMock
+        $this->formFactory
             ->expects($this->once())
             ->method('create')
             ->with(RequestPasswordResetType::class)
-            ->willReturn($formMock)
+            ->willReturn($form)
         ;
 
-        $formMock->expects($this->once())->method('handleRequest')->with($requestMock)->willReturnSelf();
-        $formMock->expects($this->once())->method('isSubmitted')->willReturn(true);
-        $formMock->expects($this->once())->method('isValid')->willReturn(true);
+        $form->expects($this->once())->method('handleRequest')->with($request)->willReturnSelf();
+        $form->expects($this->once())->method('isSubmitted')->willReturn(true);
+        $form->expects($this->once())->method('isValid')->willReturn(true);
 
         $passwordResetRequest = new PasswordResetRequest();
         $passwordResetRequest->setEmail('sylius@example.com');
 
-        $formMock->expects($this->once())->method('getData')->willReturn($passwordResetRequest);
+        $form->expects($this->once())->method('getData')->willReturn($passwordResetRequest);
 
-        $this->messageBusMock
+        $this->messageBus
             ->expects($this->once())
             ->method('dispatch')
             ->with($this->isInstanceOf(RequestResetPasswordEmail::class))
             ->willReturn(new Envelope(new \stdClass()))
         ;
 
-        $this->flashBagMock
+        $this->flashBag
             ->expects($this->once())
             ->method('add')
             ->with('success', 'sylius.admin.request_reset_password.success')
         ;
 
-        $this->sessionMock
+        $this->session
             ->expects($this->once())
             ->method('getBag')
             ->with('flashes')
-            ->willReturn($this->flashBagMock)
+            ->willReturn($this->flashBag)
         ;
 
-        $this->requestStackMock->expects($this->once())->method('getSession')->willReturn($this->sessionMock);
+        $this->requestStack->expects($this->once())->method('getSession')->willReturn($this->session);
 
-        $attributesBagMock
+        $attributesBag
             ->expects($this->once())
             ->method('get')
             ->with('_sylius', [])
             ->willReturn(['redirect' => 'my_custom_route'])
         ;
 
-        $requestMock->attributes = $attributesBagMock;
+        $request->attributes = $attributesBag;
 
-        $this->routerMock
+        $this->router
             ->expects($this->once())
             ->method('generate')
             ->with('my_custom_route')
             ->willReturn('/login')
         ;
 
-        $response = $this->requestPasswordResetAction->__invoke($requestMock);
+        $response = $this->requestPasswordResetAction->__invoke($request);
 
         $this->assertInstanceOf(RedirectResponse::class, $response);
         $this->assertSame('/login', $response->getTargetUrl());
@@ -139,52 +139,52 @@ final class RequestPasswordResetActionTest extends TestCase
 
     public function testItSendsResetPasswordRequestWhenSyliusRedirectParameterIsArray(): void
     {
-        $formMock = $this->createMock(FormInterface::class);
-        $requestMock = $this->createMock(Request::class);
-        $attributesBagMock = $this->createMock(ParameterBag::class);
+        $form = $this->createMock(FormInterface::class);
+        $request = $this->createMock(Request::class);
+        $attributesBag = $this->createMock(ParameterBag::class);
 
-        $this->formFactoryMock
+        $this->formFactory
             ->expects($this->once())
             ->method('create')
             ->with(RequestPasswordResetType::class)
-            ->willReturn($formMock)
+            ->willReturn($form)
         ;
 
-        $formMock->expects($this->once())->method('handleRequest')->with($requestMock)->willReturnSelf();
-        $formMock->expects($this->once())->method('isSubmitted')->willReturn(true);
-        $formMock->expects($this->once())->method('isValid')->willReturn(true);
+        $form->expects($this->once())->method('handleRequest')->with($request)->willReturnSelf();
+        $form->expects($this->once())->method('isSubmitted')->willReturn(true);
+        $form->expects($this->once())->method('isValid')->willReturn(true);
 
         $passwordResetRequest = new PasswordResetRequest();
         $passwordResetRequest->setEmail('sylius@example.com');
 
-        $formMock->expects($this->once())->method('getData')->willReturn($passwordResetRequest);
+        $form->expects($this->once())->method('getData')->willReturn($passwordResetRequest);
 
-        $this->messageBusMock
+        $this->messageBus
             ->expects($this->once())
             ->method('dispatch')
             ->with($this->isInstanceOf(RequestResetPasswordEmail::class))
             ->willReturn(new Envelope(new \stdClass()))
         ;
 
-        $this->flashBagMock
+        $this->flashBag
             ->expects($this->once())
             ->method('add')
             ->with('success', 'sylius.admin.request_reset_password.success')
         ;
 
-        $this->sessionMock
+        $this->session
             ->expects($this->once())
             ->method('getBag')
             ->with('flashes')
-            ->willReturn($this->flashBagMock)
+            ->willReturn($this->flashBag)
         ;
 
-        $this->requestStackMock->expects($this->once())->method('getSession')->willReturn($this->sessionMock);
+        $this->requestStack->expects($this->once())->method('getSession')->willReturn($this->session);
 
         $route = 'my_custom_route';
         $params = ['my_parameter' => 'my_value'];
 
-        $attributesBagMock
+        $attributesBag
             ->expects($this->once())
             ->method('get')
             ->with('_sylius', [])
@@ -196,16 +196,16 @@ final class RequestPasswordResetActionTest extends TestCase
             ])
         ;
 
-        $requestMock->attributes = $attributesBagMock;
+        $request->attributes = $attributesBag;
 
-        $this->routerMock
+        $this->router
             ->expects($this->once())
             ->method('generate')
             ->with($route, $params)
             ->willReturn('/login')
         ;
 
-        $response = $this->requestPasswordResetAction->__invoke($requestMock);
+        $response = $this->requestPasswordResetAction->__invoke($request);
 
         $this->assertInstanceOf(RedirectResponse::class, $response);
         $this->assertSame('/login', $response->getTargetUrl());
@@ -213,65 +213,65 @@ final class RequestPasswordResetActionTest extends TestCase
 
     public function testItRedirectsToDefaultRouteIfCustomOneIsNotDefined(): void
     {
-        $formMock = $this->createMock(FormInterface::class);
-        $requestMock = $this->createMock(Request::class);
-        $attributesBagMock = $this->createMock(ParameterBag::class);
+        $form = $this->createMock(FormInterface::class);
+        $request = $this->createMock(Request::class);
+        $attributesBag = $this->createMock(ParameterBag::class);
 
-        $this->formFactoryMock
+        $this->formFactory
             ->expects($this->once())
             ->method('create')
             ->with(RequestPasswordResetType::class)
-            ->willReturn($formMock)
+            ->willReturn($form)
         ;
 
-        $formMock->expects($this->once())->method('handleRequest')->with($requestMock)->willReturnSelf();
-        $formMock->expects($this->once())->method('isSubmitted')->willReturn(true);
-        $formMock->expects($this->once())->method('isValid')->willReturn(true);
+        $form->expects($this->once())->method('handleRequest')->with($request)->willReturnSelf();
+        $form->expects($this->once())->method('isSubmitted')->willReturn(true);
+        $form->expects($this->once())->method('isValid')->willReturn(true);
 
         $passwordResetRequest = new PasswordResetRequest();
         $passwordResetRequest->setEmail('sylius@example.com');
 
-        $formMock->expects($this->once())->method('getData')->willReturn($passwordResetRequest);
+        $form->expects($this->once())->method('getData')->willReturn($passwordResetRequest);
 
-        $this->messageBusMock
+        $this->messageBus
             ->expects($this->once())
             ->method('dispatch')
             ->with($this->isInstanceOf(RequestResetPasswordEmail::class))
             ->willReturn(new Envelope(new \stdClass()))
         ;
 
-        $this->flashBagMock
+        $this->flashBag
             ->expects($this->once())
             ->method('add')
             ->with('success', 'sylius.admin.request_reset_password.success')
         ;
 
-        $this->sessionMock
+        $this->session
             ->expects($this->once())
             ->method('getBag')
             ->with('flashes')
-            ->willReturn($this->flashBagMock)
+            ->willReturn($this->flashBag)
         ;
 
-        $this->requestStackMock->expects($this->once())->method('getSession')->willReturn($this->sessionMock);
+        $this->requestStack->expects($this->once())->method('getSession')->willReturn($this->session);
 
-        $attributesBagMock
+        $attributesBag
             ->expects($this->once())
             ->method('get')
             ->with('_sylius', [])
             ->willReturn([])
         ;
 
-        $requestMock->attributes = $attributesBagMock;
+        $request->attributes = $attributesBag;
 
-        $this->routerMock
+        $this->router
             ->expects($this->once())
             ->method('generate')
             ->with('sylius_admin_login')
             ->willReturn('/login')
         ;
 
-        $response = $this->requestPasswordResetAction->__invoke($requestMock);
+        $response = $this->requestPasswordResetAction->__invoke($request);
 
         $this->assertInstanceOf(RedirectResponse::class, $response);
         $this->assertSame('/login', $response->getTargetUrl());
@@ -279,33 +279,33 @@ final class RequestPasswordResetActionTest extends TestCase
 
     public function testItRendersFormWithErrorsWhenRequestIsNotValid(): void
     {
-        $formMock = $this->createMock(FormInterface::class);
-        $formViewMock = $this->createMock(FormView::class);
-        $requestMock = $this->createMock(Request::class);
+        $form = $this->createMock(FormInterface::class);
+        $formView = $this->createMock(FormView::class);
+        $request = $this->createMock(Request::class);
 
-        $this->formFactoryMock
+        $this->formFactory
             ->expects($this->once())
             ->method('create')
             ->with(RequestPasswordResetType::class)
-            ->willReturn($formMock)
+            ->willReturn($form)
         ;
 
-        $formMock->expects($this->once())->method('handleRequest')->with($requestMock)->willReturnSelf();
-        $formMock->expects($this->once())->method('isSubmitted')->willReturn(true);
-        $formMock->expects($this->once())->method('isValid')->willReturn(false);
+        $form->expects($this->once())->method('handleRequest')->with($request)->willReturnSelf();
+        $form->expects($this->once())->method('isSubmitted')->willReturn(true);
+        $form->expects($this->once())->method('isValid')->willReturn(false);
 
-        $this->messageBusMock->expects($this->never())->method('dispatch');
+        $this->messageBus->expects($this->never())->method('dispatch');
 
-        $formMock->expects($this->once())->method('createView')->willReturn($formViewMock);
+        $form->expects($this->once())->method('createView')->willReturn($formView);
 
-        $this->twigMock
+        $this->twig
             ->expects($this->once())
             ->method('render')
-            ->with($this->isType('string'), ['form' => $formViewMock])
+            ->with($this->isType('string'), ['form' => $formView])
             ->willReturn('responseContent')
         ;
 
-        $response = $this->requestPasswordResetAction->__invoke($requestMock);
+        $response = $this->requestPasswordResetAction->__invoke($request);
 
         $this->assertInstanceOf(Response::class, $response);
         $this->assertSame('responseContent', $response->getContent());

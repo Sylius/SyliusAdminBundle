@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\AdminBundle\Tests\Notification;
+namespace Tests\Sylius\Bundle\AdminBundle\Notification;
 
 use GuzzleHttp\Exception\ConnectException;
 use PHPUnit\Framework\Attributes\Test;
