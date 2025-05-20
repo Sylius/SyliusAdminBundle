@@ -79,7 +79,7 @@ sylius_twig_hooks:
                 priority: 100
             pending_actions:
                 template: '@SyliusAdmin/dashboard/index/component/pending_actions.html.twig'
-                priority: 0
+                priority: 100
             new_orders:
                 component: 'sylius_admin:dashboard:new_orders'
                 props:
