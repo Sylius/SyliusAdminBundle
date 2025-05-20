@@ -25,14 +25,14 @@ use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
 final class AdminBasedLocaleContextTest extends TestCase
 {
-    private MockObject&TokenStorageInterface $tokenStorageMock;
+    private MockObject&TokenStorageInterface $tokenStorage;
 
     private AdminBasedLocaleContext $adminBasedLocaleContext;
 
     protected function setUp(): void
     {
-        $this->tokenStorageMock = $this->createMock(TokenStorageInterface::class);
-        $this->adminBasedLocaleContext = new AdminBasedLocaleContext($this->tokenStorageMock);
+        $this->tokenStorage = $this->createMock(TokenStorageInterface::class);
+        $this->adminBasedLocaleContext = new AdminBasedLocaleContext($this->tokenStorage);
     }
 
     public function testImplementsLocaleContextInterface(): void
@@ -42,43 +42,43 @@ final class AdminBasedLocaleContextTest extends TestCase
 
     public function testThrowsLocaleNotFoundExceptionWhenThereIsNoToken(): void
     {
-        $this->tokenStorageMock->expects($this->once())->method('getToken')->willReturn(null);
+        $this->tokenStorage->expects($this->once())->method('getToken')->willReturn(null);
         $this->expectException(LocaleNotFoundException::class);
         $this->adminBasedLocaleContext->getLocaleCode();
     }
 
     public function testThrowsLocaleNotFoundExceptionWhenThereIsNoUserInTheToken(): void
     {
-        $tokenMock = $this->createMock(TokenInterface::class);
+        $token = $this->createMock(TokenInterface::class);
 
-        $tokenMock->expects($this->once())->method('getUser')->willReturn(null);
+        $token->expects($this->once())->method('getUser')->willReturn(null);
 
-        $this->tokenStorageMock->expects($this->once())->method('getToken')->willReturn($tokenMock);
+        $this->tokenStorage->expects($this->once())->method('getToken')->willReturn($token);
         $this->expectException(LocaleNotFoundException::class);
         $this->adminBasedLocaleContext->getLocaleCode();
     }
 
     public function testThrowsLocaleNotFoundExceptionWhenTheUserTakenFromTokenIsNotAnAdmin(): void
     {
-        $tokenMock = $this->createMock(TokenInterface::class);
-        $userMock = $this->createMock(UserInterface::class);
+        $token = $this->createMock(TokenInterface::class);
+        $user = $this->createMock(UserInterface::class);
 
-        $tokenMock->expects($this->once())->method('getUser')->willReturn($userMock);
+        $token->expects($this->once())->method('getUser')->willReturn($user);
 
-        $this->tokenStorageMock->expects($this->once())->method('getToken')->willReturn($tokenMock);
+        $this->tokenStorage->expects($this->once())->method('getToken')->willReturn($token);
         $this->expectException(LocaleNotFoundException::class);
         $this->adminBasedLocaleContext->getLocaleCode();
     }
 
     public function testReturnsLocaleOfCurrentlyLoggedAdminUser(): void
     {
-        $tokenMock = $this->createMock(TokenInterface::class);
-        $adminMock = $this->createMock(AdminUserInterface::class);
+        $token = $this->createMock(TokenInterface::class);
+        $admin = $this->createMock(AdminUserInterface::class);
 
-        $adminMock->expects($this->once())->method('getLocaleCode')->willReturn('en_US');
-        $tokenMock->expects($this->once())->method('getUser')->willreturn($adminMock);
+        $admin->expects($this->once())->method('getLocaleCode')->willReturn('en_US');
+        $token->expects($this->once())->method('getUser')->willReturn($admin);
 
-        $this->tokenStorageMock->expects($this->once())->method('getToken')->willReturn($tokenMock);
+        $this->tokenStorage->expects($this->once())->method('getToken')->willReturn($token);
         $this->assertSame('en_US', $this->adminBasedLocaleContext->getLocaleCode());
     }
 }
