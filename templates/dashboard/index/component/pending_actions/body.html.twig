@@ -1,31 +1,4 @@
-{#{% set todo_items = [{#}
-{#    'title': '<strong>Orders</strong> to process',#}
-{#    'quantity': 12,#}
-{#    'link': path('sylius_admin_order_index')#}
-{#}, {#}
-{#    'title': '<strong>Shipments</strong> to process',#}
-{#    'quantity': 5,#}
-{#    'link': path('sylius_admin_shipment_index')#}
-{#}, {#}
-{#    'title': '<strong>Reviews</strong> to approve',#}
-{#    'quantity': 3,#}
-{#    'link': path('sylius_admin_product_review_index')#}
-{#}, {#}
-{#    'title': '<strong>Customers</strong> to approve',#}
-{#    'quantity': 8,#}
-{#    'link': path('sylius_admin_customer_index')#}
-{#}, {#}
-{#    'title': '<strong>Overdue</strong> payments',#}
-{#    'quantity': 2,#}
-{#    'link': path('sylius_admin_payment_index')#}
-{#}] %}#}
-
 <div class="list-group list-group-flush">
     <div class="list-group-header fs-5 fw-bold text-secondary lh-base">{{ 'sylius.ui.item'|trans }}</div>
         {% hook 'body' %}
-{#    {% for todo_item in todo_items %}#}
-{#        <a href="{{ todo_item.link }}" class="d-flex align-items-center justify-content-between list-group-item list-group-item-action border-bottom">#}
-{#            {% hook 'body' with { todo_item } %}#}
-{#        </a>#}
-{#    {% endfor %}#}
 </div>
