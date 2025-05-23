@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Bundle\AdminBundle\Tests\Twig\Component\Dashboard;
+namespace Tests\Sylius\Bundle\AdminBundle\Twig\Component\Dashboard;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

@@ -5,8 +5,8 @@
          colors="true"
 >
     <testsuites>
-        <testsuite name="SyliusAdminBundle Test Suite">
-            <directory>./Tests/</directory>
+        <testsuite name="sylius-admin-bundle">
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
 
