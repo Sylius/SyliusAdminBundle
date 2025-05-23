@@ -8,8 +8,8 @@
         <div class="pb-5">
             <div class="input-group input-group-flat mb-4">
                 <input class="form-control" placeholder="{{ 'sylius.ui.filter'|trans }}" type="text"
-                       data-product-taxon-tree-target="filter"
-                       data-action="input->product-taxon-tree#filter"
+                    {{ stimulus_target('@sylius/admin-bundle/product-taxon-tree', 'filter') }}
+                    {{ stimulus_action('@sylius/admin-bundle/product-taxon-tree', 'filter', 'input') }}
                     {{ sylius_test_html_attribute('product-taxons-filter') }}
                 />
                 <span class="input-group-text">
