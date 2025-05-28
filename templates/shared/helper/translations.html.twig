@@ -64,7 +64,7 @@
 
 {% macro accordion_header(locale, accordion_id, is_first = false) %}
     <button
-        class="accordion-header {% if is_first == false %}collapsed{% endif %}"
+        class="accordion-button {% if is_first == false %}collapsed{% endif %}"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#translation-{{ accordion_id }}-{{ locale }}"
@@ -72,10 +72,8 @@
         aria-controls="translation-{{ accordion_id }}-{{ locale }}"
         {{ sylius_test_html_attribute( accordion_id ~ '-accordion', locale) }}
     >
-        <div class="accordion-header-text">
-            {{ locale|sylius_locale_name }}
-        </div>
-        <div class="accordion-header-toggle">
+        {{ locale|sylius_locale_name }}
+        <div class="accordion-button-toggle">
             {{ ux_icon('tabler:chevron-down') }}
         </div>
     </button>
