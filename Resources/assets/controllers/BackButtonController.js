@@ -17,9 +17,10 @@ export default class extends Controller {
 
     connect() {
         const referrer = document.referrer;
-        const currentUrl = this.currentUrlValue;
+        const currentPath = this.getPathFromUrl(this.currentUrlValue);
+        const referrerPath = this.getPathFromUrl(referrer);
 
-        if (referrer && referrer !== currentUrl) {
+        if (referrer && referrerPath !== currentPath) {
             sessionStorage.setItem('back_button_last_url', referrer);
         }
     }
@@ -34,6 +35,16 @@ export default class extends Controller {
             window.location.href = this.fallbackUrlValue;
         } else {
             console.warn('No previous URL and no fallback provided for back button.');
+        }
+    }
+
+    getPathFromUrl(url) {
+        try {
+            const parsed = new URL(url, window.location.origin);
+
+            return parsed.pathname + parsed.search;
+        } catch {
+            return '';
         }
     }
 }
