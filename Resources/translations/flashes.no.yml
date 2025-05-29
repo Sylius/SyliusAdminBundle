@@ -4,16 +4,16 @@
 sylius:
     admin:
         request_reset_password:
-            success: 'If the email you have specified exists in our system, we have sent there an instruction on how to reset your password.'
+            success: 'Hvis e-posten du har oppgitt finnes i systemet vårt, har vi sendt instruksjoner om hvordan du tilbakestiller passordet ditt dit.'
         password_reset:
-            success: 'Your password has been changed successfully!'
-            token_expired: 'The password reset token has expired.'
+            success: 'Passordet ditt har blitt endret!'
+            token_expired: 'Token for tilbakestilling av passord har utløpt.'
     email:
-        order_confirmation_resent: 'Order confirmation has been successfully resent to the customer.'
-        shipment_confirmation_resent: 'Shipment confirmation has been successfully resent to the customer.'
+        order_confirmation_resent: 'Ordrebekreftelsen har blitt sendt på nytt til kunden.'
+        shipment_confirmation_resent: 'Forsendelsesbekreftelsen har blitt sendt på nytt til kunden.'
     product_variant:
-        cannot_generate_variants: 'Cannot generate variants for a product without options values.'
+        cannot_generate_variants: 'Kan ikke generere varianter for et produkt uten valg av alternativer.'
     locale:
         delete:
-            is_used: 'Cannot delete the locale, as it is used by at least one translation.'
-            success: 'Locale has been successfully deleted.'
+            is_used: 'Kan ikke slette lokalitet, siden den er brukt i minst én oversettelse.'
+            success: 'Lokalitet har blitt slettet.'
