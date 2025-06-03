@@ -17,6 +17,7 @@ class SyliusAdmin {
      */
     static getBaseWebpackConfig(rootDir) {
         this._prepareWebpackConfig(rootDir);
+
         Encore
             .addEntry('admin-entry', path.resolve(__dirname, 'Resources/assets/entrypoint.js'));
 

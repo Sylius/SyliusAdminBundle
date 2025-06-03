@@ -83,12 +83,14 @@
 {% endmacro %}
 
 {% macro cancel(params = {}) %}
-    {% set defaultAttr = {
-        'data-controller': 'back-button',
-        'data-action': 'click->back-button#goBack',
-        'data-back-button-current-url-value': app.request.uri,
-        'data-back-button-fallback-url-value': params.fallback_url
-    } %}
+    {% set default_attr =
+        stimulus_controller('@sylius/admin-bundle/back-button')
+        |merge(stimulus_action('@sylius/admin-bundle/back-button', 'goBack', 'click'))
+        |merge({
+            'data-back-button-current-url-value': app.request.uri,
+            'data-back-button-fallback-url-value': params.fallback_url
+        })
+    %}
 
     {% set params = {
         class: null,
@@ -97,7 +99,7 @@
         attr: {}
     }
         |merge(params)
-        |merge({attr: (params.attr is defined ? params.attr : {})|merge(defaultAttr)})
+        |merge({attr: (params.attr is defined ? params.attr : {})|merge(default_attr)})
     %}
 
     {{ _self.default(params) }}
