@@ -4,12 +4,12 @@
 sylius:
     admin:
         request_reset_password:
-            success: 'Se l\'email che hai specificato esiste nel nostro sistema, abbiamo inviato lì le istruzioni su come reimpostare la tua password.'
+            success: 'Se l''email che hai specificato esiste nel nostro sistema, abbiamo inviato lì le istruzioni su come reimpostare la tua password.'
         password_reset:
             success: 'La tua password è stata cambiata con successo!'
             token_expired: 'Il token per il reset della password è scaduto.'
     email:
-        order_confirmation_resent: 'La conferma dell\'ordine è stata inviata nuovamente al cliente con successo.'
+        order_confirmation_resent: 'La conferma dell''ordine è stata inviata nuovamente al cliente con successo.'
         shipment_confirmation_resent: 'La conferma della spedizione è stata inviata nuovamente al cliente con successo.'
     product_variant:
         cannot_generate_variants: 'Impossibile generare varianti per un prodotto senza valori delle opzioni.'

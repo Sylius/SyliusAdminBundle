@@ -12,7 +12,7 @@ sylius:
     form:
         admin:
             channel:
-                lowest_price_for_discounted_products_visible: 'Mostrare il prezzo più basso dei prodotti sconto prima dell\'attuale sconto?'
+                lowest_price_for_discounted_products_visible: 'Mostrare il prezzo più basso dei prodotti sconto prima dell''attuale sconto?'
                 period_for_which_the_lowest_price_is_calculated: 'Periodo per il quale viene calcolato il prezzo più basso'
             reset_password:
                 password:
@@ -71,7 +71,7 @@ sylius:
         catalog_promotion:
             dates_details: 'Questa operazione richiede tempo! Si prega di considerare un ritardo da 2 a 10 minuti a partire dalle date specificate. Il ritardo dipende dalle dimensioni del catalogo.'
         channel:
-            account_verification_required_details: 'Disabilitando questa opzione, sarà possibile creare account e accedervi senza la verifica dell\'email e quindi accedere ai dati degli ordini effettuati come ospite.'
+            account_verification_required_details: 'Disabilitando questa opzione, sarà possibile creare account e accedervi senza la verifica dell''email e quindi accedere ai dati degli ordini effettuati come ospite.'
         channel_pricing_history: 'Storico dei prezzi del canale'
         channel_pricings: 'Prezzi dei canali'
         create_new:
@@ -123,4 +123,4 @@ sylius:
         work_in_progress: 'Lavoro in corso'
         empty_date: 'vuoto'
         notifications:
-            new_version_of_sylius_available: 'È disponibile una nuova versione di Sylius. Contatta il tuo tecnico per l\'aggiornamento.'
+            new_version_of_sylius_available: 'È disponibile una nuova versione di Sylius. Contatta il tuo tecnico per l''aggiornamento.'
