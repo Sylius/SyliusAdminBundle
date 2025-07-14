@@ -33,7 +33,7 @@ sylius:
                     admin_users: 'Beheerders'
                     channels: 'Kanalen'
                     countries: 'Landen'
-                    currencies: 'Valuta's'
+                    currencies: "Valuta's"
                     exchange_rates: 'Wisselkoersen'
                     header: 'Configuratie'
                     locales: 'Talen'
