@@ -59,6 +59,10 @@ textarea.form-control {
     min-height: 44px;
 }
 
+.form-control[type="file"] {
+    min-height: unset;
+}
+
 .form-control:focus {
     box-shadow: none;
 }
