@@ -21,9 +21,9 @@
                     <td class="five wide gray text">
                         <strong>{{ channelPricing.channelCode|sylius_channel_name }}</strong>
                     </td>
-                    <td>{{ money.format(channelPricing.price, product.channels.first.baseCurrency) }}</td>
-                    <td>{{ channelPricing.originalPrice ? money.format(channelPricing.originalPrice, product.channels.first.baseCurrency) : '-' }}</td>
-                    <td>{{ channelPricing.lowestPriceBeforeDiscount ? money.format(channelPricing.lowestPriceBeforeDiscount, product.channels.first.baseCurrency) : '-' }}</td>
+                    <td>{{ money.format(channelPricing.price, currencies[channelPricing.channelCode]) }}</td>
+                    <td>{{ channelPricing.originalPrice ? money.format(channelPricing.originalPrice, currencies[channelPricing.channelCode]) : '-' }}</td>
+                    <td>{{ channelPricing.lowestPriceBeforeDiscount ? money.format(channelPricing.lowestPriceBeforeDiscount, currencies[channelPricing.channelCode]) : '-' }}</td>
                     {% include '@SyliusAdmin/Product/Show/_appliedPromotions.html.twig' %}
                     <td>
                         <a class="ui blue labeled icon button" href="{{ path('sylius_admin_channel_pricing_log_entry_index', {
