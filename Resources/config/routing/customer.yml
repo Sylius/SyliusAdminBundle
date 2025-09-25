@@ -19,10 +19,11 @@ sylius_admin_customer_order_index:
         _sylius:
             section: admin
             permission: true
-            template: "@SyliusAdmin/customer/order/index.html.twig"
+            template: "@SyliusAdmin/shared/crud/index.html.twig"
             grid: sylius_admin_customer_order
             vars:
                 customer: expr:service('sylius.repository.customer').find($id)
+                hook_prefix: 'sylius_admin.customer.order'
 
 sylius_admin_customer_orders_statistics:
     path: /orders-statistics
