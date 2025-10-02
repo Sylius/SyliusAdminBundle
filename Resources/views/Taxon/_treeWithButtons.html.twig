@@ -48,7 +48,7 @@
                         </form>
                     </div>
                 </div>
-                {{ tree.render(taxon.children) }}
+                {{ tree.render(taxon.children.toArray|filter(c => c.id != taxon.id)) }}
             </li>
         {% endfor %}
     </ul>
